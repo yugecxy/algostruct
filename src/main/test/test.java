@@ -1,4 +1,4 @@
-package strucalgo.test;
+package test;
 
 /**
  * Created by chenxiaoyu

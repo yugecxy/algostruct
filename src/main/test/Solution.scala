@@ -1,4 +1,5 @@
-package strucalgo.test
+package test
+
 /**
   * Created by chenxiaoyu
   * Author: chenxiaoyu
@@ -6,10 +7,9 @@ package strucalgo.test
   * Desc:
   *
   */
-object testscala {
+
+object Solution {
+
   def main(args: Array[String]): Unit = {
-    var f = Map("ss" -> "f")
-    f += ("ss" -> "t")
-    print(f)
   }
 }
