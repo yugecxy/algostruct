@@ -1,4 +1,4 @@
-package strucalgo.stack.practice;
+package structure.stack.practice;
 
 import java.util.Stack;
 

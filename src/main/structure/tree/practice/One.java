@@ -1,7 +1,7 @@
-package strucalgo.tree.practice;
+package structure.tree.practice;
 
-import strucalgo.tree.basic.BasicTree;
-import strucalgo.tree.basic.InintTree;
+import structure.tree.basic.BasicTree;
+import structure.tree.basic.InintTree;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -17,11 +17,8 @@ public class One {
         int max = Integer.MIN_VALUE;
         Queue<BasicTree> queue = new LinkedList<>();
         queue.offer(root);
-        while (true) {
+        while (!queue.isEmpty()) {
             BasicTree tmp = queue.poll();
-            if (tmp == null) {
-                break;
-            }
             if (tmp.getData() > max) {
                 max = tmp.getData();
             }

@@ -1,7 +1,7 @@
-package strucalgo.tree;
+package structure.tree;
 
-import strucalgo.tree.basic.BasicTree;
-import strucalgo.tree.basic.InintTree;
+import structure.tree.basic.BasicTree;
+import structure.tree.basic.InintTree;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -56,16 +56,13 @@ public class Traversal {
         }
         Queue<BasicTree> queue = new LinkedList();
         queue.offer(root);
-        while (true) {
+        while (!queue.isEmpty()) {
             BasicTree tmp = queue.poll();
-            if (tmp == null) {          //直到队列为空
-                return;
-            }
             System.out.println(tmp.getData());
-            if (root.getLeft() != null) {
+            if (tmp.getLeft() != null) {
                 queue.offer(tmp.getLeft());
             }
-            if (root.getRight() != null) {
+            if (tmp.getRight() != null) {
                 queue.offer(tmp.getRight());
             }
         }

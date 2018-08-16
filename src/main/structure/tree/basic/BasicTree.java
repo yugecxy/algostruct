@@ -1,4 +1,4 @@
-package strucalgo.tree.basic;
+package structure.tree.basic;
 
 /**
  * Created by chenxiaoyu

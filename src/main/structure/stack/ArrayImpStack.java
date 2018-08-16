@@ -1,4 +1,4 @@
-package strucalgo.stack;
+package structure.stack;
 import java.util.ArrayList;
 import java.util.List;
 

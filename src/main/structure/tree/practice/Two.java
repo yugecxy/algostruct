@@ -1,7 +1,7 @@
-package strucalgo.tree.practice;
+package structure.tree.practice;
 
-import strucalgo.tree.basic.BasicTree;
-import strucalgo.tree.basic.InintTree;
+import structure.tree.basic.BasicTree;
+import structure.tree.basic.InintTree;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -18,11 +18,8 @@ public class Two {
         Stack<Integer> stack = new Stack<>();
         Queue<BasicTree> queue = new LinkedList<>();
         queue.offer(root);
-        while (true) {
+        while (!queue.isEmpty()) {
             BasicTree tmp = queue.poll();
-            if (tmp == null) {
-                break;
-            }
             stack.push(tmp.getData());
             if (tmp.getRight() != null) {
                 queue.offer(tmp.getRight());

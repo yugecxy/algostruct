@@ -1,5 +1,8 @@
 package test;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Created by chenxiaoyu
  * Author: chenxiaoyu
@@ -7,10 +10,12 @@ package test;
  * Desc:
  */
 public class test {
-    public static void main(String[] args) {
-        char x='s';
-        if(x=='f' & x=='l'){
+    public static void recursivePrint(int num) {
+       float a=1299999898977989998f;
+        System.out.println(a);
+    }
 
-        }
+    public static void main(String[] args) {
+        recursivePrint(1);
     }
 }
