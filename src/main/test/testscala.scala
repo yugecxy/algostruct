@@ -8,9 +8,9 @@ package test
   *
   */
 object testscala {
+
+
   def main(args: Array[String]): Unit = {
-    var f = Map("ss" -> "f")
-    f += ("ss" -> "t")
-    print(f)
+
   }
 }

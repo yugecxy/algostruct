@@ -1,5 +1,6 @@
 package test;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -10,12 +11,34 @@ import java.util.Queue;
  * Desc:
  */
 public class test {
-    public static void recursivePrint(int num) {
-       float a=1299999898977989998f;
-        System.out.println(a);
+
+    public static int getValue(int[] a, int[] b, int k) {
+        int i = a.length - 1;
+        int j = b.length - 1;
+        int sta = 0;
+        int tmp = 0;
+        while (i >= 0 && j >= 0) {
+            if (a[i] > b[j]) {
+                tmp = a[i--];
+            } else {
+                tmp = b[j--];
+            }
+            if (sta++ == k) {
+                break;
+            }
+        }
+        while (i >= 0) {
+            tmp = a[i--];
+            if (sta++ == k) break;
+        }
+        while (j >= 0) {
+            tmp = b[j--];
+            if (sta++ == k) break;
+        }
+        return tmp;
     }
 
     public static void main(String[] args) {
-        recursivePrint(1);
+        System.out.println(getValue(new int[]{1, 2, 2, 8}, new int[]{6}, 3));
     }
 }

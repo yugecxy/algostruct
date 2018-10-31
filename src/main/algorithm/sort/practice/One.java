@@ -7,9 +7,10 @@ import util.Common;
  * Created by chenxiaoyu
  * Author: chenxiaoyu
  * Date: 2018/8/9
- * Desc: 对多个已经排序好的数组排序
+ * Desc: 对两个已经排序好的数组排序
  */
 public class One {
+    //归并排序的思路
     public static Integer[] merge(Integer[] array1, Integer[] array2) {
         Integer[] arr = new Integer[array1.length + array2.length];
         int i = 0, j = 0, k = 0;  //i:用于标识array1数组    j：用来标识array2数组  k：用来标识传入的数组
