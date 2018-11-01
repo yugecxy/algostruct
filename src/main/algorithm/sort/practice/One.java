@@ -1,12 +1,8 @@
 package algorithm.sort.practice;
 
-import algorithm.sort.Sort;
-import util.Common;
+import java.util.stream.Stream;
 
 /**
- * Created by chenxiaoyu
- * Author: chenxiaoyu
- * Date: 2018/8/9
  * Desc: 对两个已经排序好的数组排序
  */
 public class One {
@@ -32,17 +28,8 @@ public class One {
     }
 
     public static void main(String[] args) {
-        long begin1 = Common.getTime();
-        Integer[] a = Common.initIntArray(1000000, 100000);
-        long end1 = Common.getTime();
-        System.out.println(end1 - begin1);
-        Integer[] b = Common.initIntArray(1000000, 100000);
-        new Sort().quickSort(a);
-        new Sort().quickSort(b);
-        long begin = Common.getTime();
-        merge(a, b);
-        long end = Common.getTime();
-        System.out.println(end - begin);
+        Integer[] res = merge(new Integer[]{1, 2, 2, 8}, new Integer[]{6, 9});
+        Stream.of(res).forEach(System.out::println);
 //        Stream.of(arr).forEach(System.out::println);
     }
 }

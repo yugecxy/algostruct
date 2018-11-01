@@ -13,7 +13,7 @@ import java.util.*;
 public class Sort {
     /**
      * @param array
-     * @desc 冒泡排序：两两交换(20000个数36s左右)
+     * @desc 冒泡排序：两两交换(5w个数10s左右)
      * 时间复杂度：O(n^2)
      */
     public void bubble(Integer[] array) {
@@ -29,7 +29,7 @@ public class Sort {
 
     /**
      * @param array
-     * @desc 选择排序：对比冒泡减少了交换的次数，选择仅仅是两个数交换(100000个数21s左右)
+     * @desc 选择排序：对比冒泡减少了交换的次数，选择排序一次循环之后仅仅是两个数交换(5w个数3s左右)。其实选择排序就是对冒泡排序对优化
      * 时间复杂度：O(n^2)
      */
     public void select(Integer[] array) {
@@ -135,12 +135,12 @@ public class Sort {
      * @desc 计数排序
      */
 
-    public static void countSort(Integer[] arr){
+    public static void countSort(Integer[] arr) {
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
 
         //找出数组中的最大最小值
-        for(int i = 0; i < arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             max = Math.max(max, arr[i]);
             min = Math.min(min, arr[i]);
         }
@@ -148,15 +148,15 @@ public class Sort {
         int help[] = new int[max];
 
         //找出每个数字出现的次数
-        for(int i = 0; i < arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             int mapPos = arr[i] - min;
             help[mapPos]++;
         }
 
         int index = 0;
-        for(int i = 0; i < help.length; i++){
-            while(help[i]-- > 0){
-                arr[index++] = i+min;
+        for (int i = 0; i < help.length; i++) {
+            while (help[i]-- > 0) {
+                arr[index++] = i + min;
             }
         }
     }
@@ -164,9 +164,7 @@ public class Sort {
     /**
      * @param
      * @desc 桶排序(1000, 000个数450ms左右)
-     * 时间复杂度：桶排序的平均时间复杂度为线性的O(N+C)，其中C=N*(logN-logM)。
-     * 如果相对于同样的N，桶数量M越大，其效率越高，最好的时间复杂度达到O(N)。
-     * 当然桶排序的空间复杂度 为O(N+M)，如果输入数据非常庞大，而桶的数量也非常多，则空间代价无疑是昂贵的
+     * 时间复杂度：桶排序的平均时间复杂度为线性的O(N+C)
      */
     public void bucketSort(Integer[] array) {
         int max = Integer.MIN_VALUE;
@@ -204,11 +202,10 @@ public class Sort {
      * @param
      * @desc 快速排序(1000, 000个数400ms左右)
      * 时间复杂度：O(nlgn)
-     *
      */
     public void quickSort(Integer[] array) {
-        List<Integer> list=new LinkedList();   //链表比数组效率要高
-        for(Integer i:array){
+        List<Integer> list = new LinkedList();   //链表比数组效率要高
+        for (Integer i : array) {
             list.add(array[i]);
         }
         Collections.sort(list);
@@ -218,7 +215,7 @@ public class Sort {
         Integer[] arr = Common.initIntArray(10, 1000);
         System.out.println("开始计算");
         long begin = Common.getTime();
-        new Sort().mergeSort(arr,0,arr.length-1);
+        new Sort().mergeSort(arr, 0, arr.length - 1);
 
         long end = Common.getTime();
         System.out.println(end - begin);

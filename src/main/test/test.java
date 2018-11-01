@@ -1,8 +1,12 @@
 package test;
 
+import algorithm.sort.Sort;
+import util.Common;
+
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.stream.Stream;
 
 /**
  * Created by chenxiaoyu
@@ -12,33 +16,29 @@ import java.util.Queue;
  */
 public class test {
 
-    public static int getValue(int[] a, int[] b, int k) {
-        int i = a.length - 1;
-        int j = b.length - 1;
-        int sta = 0;
-        int tmp = 0;
-        while (i >= 0 && j >= 0) {
-            if (a[i] > b[j]) {
-                tmp = a[i--];
-            } else {
-                tmp = b[j--];
-            }
-            if (sta++ == k) {
-                break;
+    public static Integer[] yu(Integer[] array) {
+        for (int i = 1; i < array.length; i++)      //待插入的
+        {
+            int insert = array[i];
+            for (int j = i - 1; j >= 0; j--) {
+                if (array[j] > insert) {
+                    array[j + 1] = array[j];
+                } else {
+                    array[j + 1] = insert;
+                    break;
+                }
             }
         }
-        while (i >= 0) {
-            tmp = a[i--];
-            if (sta++ == k) break;
-        }
-        while (j >= 0) {
-            tmp = b[j--];
-            if (sta++ == k) break;
-        }
-        return tmp;
+        return array;
     }
 
     public static void main(String[] args) {
-        System.out.println(getValue(new int[]{1, 2, 2, 8}, new int[]{6}, 3));
+//        Stream.of(yu(Common.initIntArray(10,100))).forEach(System.out::println);
+        Integer[] arr = Common.initIntArray(50000, 100000);
+        System.out.println("开始计算");
+        long begin = Common.getTime();
+        yu(arr);
+        long end = Common.getTime();
+        System.out.println((end - begin) / 1000);
     }
 }
