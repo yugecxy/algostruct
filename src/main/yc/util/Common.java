@@ -8,6 +8,7 @@ import java.util.Random;
  * Date: 2018/7/25
  * Desc:
  */
+
 public class Common {
     public static long getTime() {
         return System.currentTimeMillis();
