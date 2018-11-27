@@ -25,16 +25,15 @@ public class Find {
             return mid;
         } else if (key > array[mid]) {
             return binSearch(array, mid + 1, end, key);
-        } else if (key < array[mid]) {
+        } else {
             return binSearch(array, start, mid - 1, key);
         }
-        return -1;
     }
 
 
     public static void main(String[] args) {
         int[] array = new int[]{4, 6, 1, 9};
-        int result = binSearch(array, 0, array.length - 1, 40);
+        int result = binSearch(array, 0, array.length - 1, 6);
         System.out.println(result);
     }
 }

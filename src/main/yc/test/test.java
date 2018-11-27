@@ -1,8 +1,7 @@
 package test;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.lang.reflect.Array;
+import java.util.*;
 
 /**
  * Created by chenxiaoyu
@@ -13,6 +12,6 @@ import java.util.Queue;
 public class test {
 
     public static void main(String[] args) {
-        System.out.println(11);
+        Object[] a = new Object[]{new LinkedList<>()};
     }
 }
