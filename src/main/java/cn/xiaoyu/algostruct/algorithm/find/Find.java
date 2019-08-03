@@ -32,8 +32,8 @@ public class Find {
 
 
     public static void main(String[] args) {
-        int[] array = new int[]{4, 6, 1, 9};
-        int result = binSearch(array, 0, array.length - 1, 6);
+        int[] array = new int[]{1, 3, 4, 6, 9, 10};
+        int result = binSearch(array, 0, array.length - 1, 7);
         System.out.println(result);
     }
 }

@@ -14,7 +14,7 @@ public class Sort {
     /**
      * @param array
      * @desc 冒泡排序：两两交换(5w个数10s左右)
-     * 时间复杂度：O(n^2)
+     * 时间复杂度：O(n^2),最好情况也是O(n^2)
      */
     public void bubble(Integer[] array) {
         for (int i = array.length - 1; i >= 0; i--)
@@ -25,6 +25,26 @@ public class Sort {
                     array[j + 1] = tmp;
                 }
             }
+    }
+
+    /**
+     * @param array
+     * @desc 冒泡排序的改进版：两两交换(5w个数10s左右)
+     * 时间复杂度：O(n^2)，最好情况是O(n)
+     */
+    public void bubble2(Integer[] array) {
+        for (int i = array.length - 1; i >= 0; i--) {
+            boolean swap = false;
+            for (int j = 0; j < i; j++) {
+                if (array[j] > array[j + 1]) {
+                    int tmp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = tmp;
+                    swap = true;
+                }
+            }
+            if (!swap) break;
+        }
     }
 
     /**
