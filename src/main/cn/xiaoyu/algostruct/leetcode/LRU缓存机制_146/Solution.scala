@@ -15,27 +15,28 @@ class LRUCache(_capacity: Int) {
 
   var last: Node = null
 
+  def updateUsedKey(key: Int): Unit = {
+    var cur: Node = head
+    var pre: Node = null
+    while (cur.value != key) {
+      pre = cur
+      cur = cur.next
+    }
+    if (cur.next != null) { //如果在链表的末尾就不进行更新操作了
+      if (pre == null) head = cur.next else pre.next = cur.next
+      cur.next = null
+      last.next = cur
+      last = cur
+    }
+  }
+
   def get(key: Int): Int = {
     val value = map.getOrElse(key, -1)
-    if (value != -1 && map.size > 1) {
-      var cur: Node = head
-      var pre: Node = null
-      while (cur.value != key) {
-        pre = cur
-        cur = cur.next
-      }
-      if (cur.next != null) {
-        if (pre == null) head = cur.next else pre.next = cur.next
-        cur.next = null
-        last.next = cur
-        last = cur
-      }
-    }
+    if (value != -1 && map.size > 1) updateUsedKey(key)
     value
   }
 
   def put(key: Int, value: Int) {
-
     if (!map.contains(key)) {
       if (map.size == _capacity) {
         map.remove(head.value)
@@ -53,20 +54,7 @@ class LRUCache(_capacity: Int) {
     }
     else {
       map.update(key, value)
-      if (map.size > 1) {
-        var cur: Node = head
-        var pre: Node = null
-        while (cur.value != key) {
-          pre = cur
-          cur = cur.next
-        }
-        if (cur.next != null) {
-          if (pre == null) head = cur.next else pre.next = cur.next
-          cur.next = null
-          last.next = cur
-          last = cur
-        }
-      }
+      if (map.size > 1) updateUsedKey(key)
     }
   }
 
