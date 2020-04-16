@@ -1,8 +1,11 @@
-package cn.xiaoyu.algostruct.algorithm.sort;
+package xiaoyu.algostruct.algorithm.sort;
 
 import cn.xiaoyu.algostruct.util.Common;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by chenxiaoyu
