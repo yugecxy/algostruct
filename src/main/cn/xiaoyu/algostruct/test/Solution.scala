@@ -1,28 +1,56 @@
 package cn.xiaoyu.algostruct.test
 
+class ListNode(var _x: Int = 0) {
+  var next: ListNode = null
+  var x: Int = _x
+}
 
 object Solution {
 
-  def compute(obj: Any): Any = {
-    obj match {
-      case _: Map[String, Any] => {
-        obj.asInstanceOf[Map[String, Any]].map(x => (x._1, compute(x._2))).filter(x => x._2 match {
-          case _: Map[String, Any] => x._2.asInstanceOf[Map[String, Any]].nonEmpty
-          case _ => x._2 != ""
-        })
+  def mergeTwoLists(l1: ListNode, l2: ListNode): ListNode = {
+    var cur1 = l1
+    var cur2 = l2
+    var res: ListNode = null
+    var resHead: ListNode = null
+    while (cur1 != null || cur2 != null) {
+      if (cur2 == null || (cur1 != null && cur1.x < cur2.x)) {
+        val tmpNode = new ListNode(cur1.x)
+        if (res == null) {
+          res = tmpNode
+          resHead = res
+        } else {
+          res.next = tmpNode
+          res = tmpNode
+        }
+        cur1 = cur1.next
+      } else {
+        val tmpNode = new ListNode(cur2.x)
+        if (res == null) {
+          res = tmpNode
+          resHead = res
+        } else {
+          res.next = tmpNode
+          res = tmpNode
+        }
+        cur2 = cur2.next
       }
-      case _: List[Any] => obj.asInstanceOf[List[Any]].map(x => compute(x)).filter(x => x match {
-        case _: Map[String, Any] => x.asInstanceOf[Map[String, Any]].nonEmpty
-        case _ => true
-      })
-      case _ => obj
     }
+    resHead
   }
 
   def main(args: Array[String]): Unit = {
-    val a: Map[String, Any] = Map("name" -> "tom", "age" -> "", "info" -> List(Map("address" -> "hh", "kk" -> ""), Map("a" -> "")), "info2" -> Map("d" -> ""))
-    val b = compute(a)
-    println(b)
+    val n1 = new ListNode(1)
+    val n2 = new ListNode(2)
+    val n3 = new ListNode(4)
+    n1.next = n2
+    n2.next = n3
 
+    val x1 = new ListNode(1)
+    val x2 = new ListNode(3)
+    val x3 = new ListNode(4)
+    x1.next = x2
+    x2.next = x3
+
+    mergeTwoLists(n1, x1)
   }
 }
