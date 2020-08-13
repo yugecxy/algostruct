@@ -9,29 +9,16 @@ class TreeNode(var _value: Int) {
 
 object Solution {
   def isSubStructure(A: TreeNode, B: TreeNode): Boolean = {
-    if (B == null) return false
+    if (B == null || A == null) return false
 
     def findByDeep(x: TreeNode, y: TreeNode): Boolean = {
-      if (y == null) return true
-      if (x == null && y == null) true
-      else if (x != null && y != null) {
-        if (x.value == y.value) {
-          findByDeep(x.left, y.left) && findByDeep(x.right, y.right)
-        }
-        else false
-      }
-      else false
+      if (y == null) true
+      else if (x == null) false
+      else if (x.value != y.value) false
+      else findByDeep(x.left, y.left) && findByDeep(x.right, y.right)
     }
 
-    def lookupAByDeep(x: TreeNode): Boolean = {
-      if (x == null) return false
-      val bol = findByDeep(x, B)
-      if (bol) true else {
-        lookupAByDeep(x.left) || lookupAByDeep(x.right)
-      }
-    }
-
-    lookupAByDeep(A)
+    findByDeep(A, B) || isSubStructure(A.left, B) || isSubStructure(A.right, B)
   }
 
   def main(args: Array[String]): Unit = {
