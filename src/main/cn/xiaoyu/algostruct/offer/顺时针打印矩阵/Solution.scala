@@ -41,11 +41,6 @@ object Solution {
   }
 
   def main(args: Array[String]): Unit = {
-    val input = Array(
-
-    )
-
-    spiralOrder(input).foreach(println(_))
 
   }
 }
