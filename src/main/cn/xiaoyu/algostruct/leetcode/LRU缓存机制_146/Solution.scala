@@ -2,72 +2,86 @@ package xiaoyu.algostruct.leetcode.LRU缓存机制_146
 
 import scala.collection.mutable
 
-class Node(x: Int) {
-  var next: Node = null
-  var value = x
+class CachedNode(key: Int) {
+  val value: Int = key
+  var next: CachedNode = null
 }
 
 class LRUCache(_capacity: Int) {
 
-  val map = mutable.HashMap[Int, Int]()
+  val data: mutable.HashMap[Int, Int] = mutable.HashMap[Int, Int]()
 
-  var head: Node = null
+  //保存
+  var head: CachedNode = null
+  var tail: CachedNode = null
 
-  var last: Node = null
+  def initCache(key: Int) = {
+    val cur = new CachedNode(key)
+    head = cur
+    tail = cur
+  }
 
-  def updateUsedKey(key: Int): Unit = {
-    var cur: Node = head
-    var pre: Node = null
-    while (cur.value != key) {
-      pre = cur
-      cur = cur.next
-    }
-    if (cur.next != null) { //如果在链表的末尾就不进行更新操作了
-      if (pre == null) head = cur.next else pre.next = cur.next
-      cur.next = null
-      last.next = cur
-      last = cur
+  def insertOrUpdateCache = (key: Int, isInsert: Boolean) => {
+    if (isInsert) {
+      val cur = new CachedNode(key)
+      tail.next = cur
+      tail = cur
+      if (data.size > _capacity) {
+        data.remove(head.value)
+        head = head.next
+      }
+    } else {
+      //查找
+      var pre: CachedNode = null
+      var cur: CachedNode = head
+      while (cur.value != key) {
+        pre = cur
+        cur = cur.next
+      }
+      if (cur.next != null) { // 如果节点已经在末尾则不更新
+        if (pre == null) head = head.next else pre.next = cur.next
+        cur.next = null
+        tail.next = cur
+        tail = cur
+      }
     }
   }
 
   def get(key: Int): Int = {
-    val value = map.getOrElse(key, -1)
-    if (value != -1 && map.size > 1) updateUsedKey(key)
+    val value = data.getOrElse(key, -1)
+    if (value != -1) insertOrUpdateCache(key, false)
     value
   }
 
   def put(key: Int, value: Int) {
-    if (!map.contains(key)) {
-      if (map.size == _capacity) {
-        map.remove(head.value)
-        head = head.next
-      }
-      map.put(key, value)
-      val tmp = new Node(key)
-      if (head == null) {
-        head = tmp
-        last = head
-      } else {
-        last.next = tmp
-        last = tmp
-      }
+    if (data.contains(key)) {
+      data.update(key, value)
+      insertOrUpdateCache(key, false)
     }
     else {
-      map.update(key, value)
-      if (map.size > 1) updateUsedKey(key)
+      if (data.isEmpty) {
+        initCache(key)
+        data.put(key, value)
+      } else {
+        data.put(key, value)
+        insertOrUpdateCache(key, true)
+      }
     }
   }
-
 }
 
 object Solution {
   def main(args: Array[String]): Unit = {
-    val a = new LRUCache(2)
-    a.put(2, 6)
-    a.get(1)
-    a.put(1, 5)
-    a.put(1, 2)
-    a.get(1)
-    a.get(2)
+    val cache = new LRUCache(2)
+    cache.put(1, 1);
+    cache.put(2, 2);
+    cache.get(1); // 返回  1
+    cache.put(3, 3); // 该操作会使得关键字 2 作废
+    cache.get(2); // 返回 -1 (未找到)
+    cache.put(4, 4); // 该操作会使得关键字 1 作废
+    cache.get(1); // 返回 -1 (未找到)
+    cache.get(3); // 返回  3
+    cache.get(4); // 返回  4
+
   }
 }
