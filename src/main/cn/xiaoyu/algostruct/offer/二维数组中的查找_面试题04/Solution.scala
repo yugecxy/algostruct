@@ -1,5 +1,6 @@
 package xiaoyu.algostruct.offer.二维数组中的查找_面试题04
 
+//https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/
 object Solution {
   def findNumberIn2DArray(matrix: Array[Array[Int]], target: Int): Boolean = {
     if (matrix.isEmpty) return false
