@@ -5,6 +5,9 @@ class ListNode(_x: Int = 0, _next: ListNode = null) {
   var x: Int = _x
 }
 
+/**
+  * https://leetcode-cn.com/problems/add-two-numbers/
+  */
 object Solution {
   def addTwoNumbers(l1: ListNode, l2: ListNode): ListNode = {
     if (l1 == null && l2 == null) return null

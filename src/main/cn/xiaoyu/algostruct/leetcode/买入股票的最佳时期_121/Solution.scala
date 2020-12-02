@@ -1,5 +1,8 @@
 package xiaoyu.algostruct.leetcode.买入股票的最佳时期_121
 
+/**
+  * https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/
+  */
 object Solution {
   def maxProfit(prices: Array[Int]): Int = {
     if (prices.length <= 1) return 0
