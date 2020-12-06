@@ -1,7 +1,10 @@
-package xiaoyu.algostruct.leetcode.岛屿数量_200
+package cn.xiaoyu.algostruct.leetcode.岛屿数量_200
 
 import scala.collection.mutable
 
+/**
+  * https://leetcode-cn.com/problems/number-of-islands/solution/dao-yu-shu-liang-by-leetcode/
+  */
 object Solution {
 
   def numIslands(grid: Array[Array[Char]]): Int = {

@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.util;
+package cn.xiaoyu.algostruct.util;
 
 public class Node {
     public int value;

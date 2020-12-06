@@ -1,6 +1,6 @@
-package xiaoyu.algostruct.algorithm.sort;
+package cn.xiaoyu.algostruct.algorithm.sort;
 
-import cn.xiaoyu.algostruct.util.Common;
+import xiaoyu.algostruct.util.Common;
 
 import java.util.ArrayList;
 import java.util.Collections;
