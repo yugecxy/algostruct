@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.leetcode.字符串解码_394
+package xiaoyu.algostruct.leetcode.___字符串解码_394
 
 import scala.collection.mutable.Stack
 
@@ -32,13 +32,6 @@ object Solution {
       }
     }
     res
-  }
-
-  /**
-    * 递归实现
-    */
-  def decodeString2(s: String): String = {
-    ""
   }
 
   def main(args: Array[String]): Unit = {
