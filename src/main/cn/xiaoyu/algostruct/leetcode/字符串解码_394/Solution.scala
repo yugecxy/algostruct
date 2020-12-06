@@ -5,7 +5,7 @@ import scala.collection.mutable.Stack
 object Solution {
 
   /**
-    * 栈实现
+    * https://leetcode-cn.com/problems/decode-string/
     */
   def decodeString(s: String): String = {
     val stack = new Stack[(Int, String)]()

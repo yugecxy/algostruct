@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.util;
+package xiaoyu.algostruct.util;
 
 import java.util.Random;
 
