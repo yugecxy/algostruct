@@ -7,31 +7,29 @@ class ListNode(_x: Int = 0, _next: ListNode = null) {
 
 object Solution {
   def mergeTwoLists(l1: ListNode, l2: ListNode): ListNode = {
-    if (l1 == null && l2 == null) return null
-    var h1 = l1
-    var h2 = l2
-    var retTail: ListNode = null
-    var retHead: ListNode = null
-    while (h1 != null || h2 != null) {
-      var newNode: ListNode = null
-      if (h2 == null || (h1 != null && h1.x < h2.x)) {
-        newNode = new ListNode(h1.x)
-        h1 = h1.next
+    var head: ListNode = null
+    var tail: ListNode = null
+    var c1 = l1
+    var c2 = l2
+    while (c1 != null || c2 != null) {
+      var cur: ListNode = null
+      if (c2 == null || (c1 != null && c1.x < c2.x)) {
+        cur = c1
+        c1 = c1.next
       }
       else {
-        newNode = new ListNode(h2.x)
-        h2 = h2.next
+        cur = c2
+        c2 = c2.next
       }
-      if (retHead == null) {
-        retHead = newNode
-        retTail = retHead
-      }
-      else {
-        retTail.next = newNode
-        retTail = newNode
+      if (head == null) {
+        head = cur
+        tail = head
+      } else {
+        tail.next = cur
+        tail = cur
       }
     }
-    retHead
+    head
   }
 
   def main(args: Array[String]): Unit = {
