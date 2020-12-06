@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.leetcode.岛屿数量_200
+package cn.xiaoyu.algostruct.leetcode.___岛屿数量_200
 
 import scala.collection.mutable
 
