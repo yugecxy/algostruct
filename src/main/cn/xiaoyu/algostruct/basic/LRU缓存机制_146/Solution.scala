@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.leetcode.LRU缓存机制_146
+package xiaoyu.algostruct.basic.LRU缓存机制_146
 
 import scala.collection.mutable
 

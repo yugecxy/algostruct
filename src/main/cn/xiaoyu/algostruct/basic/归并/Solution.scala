@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.algorithm.sort.merge_sort
+package xiaoyu.algostruct.basic.归并
 
 import scala.collection.mutable.ArrayBuffer
 

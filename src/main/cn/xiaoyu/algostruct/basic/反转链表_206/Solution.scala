@@ -1,10 +1,13 @@
-package xiaoyu.algostruct.leetcode.反转链表_206
+package xiaoyu.algostruct.basic.反转链表_206
 
 class ListNode(var _x: Int = 0) {
   var next: ListNode = null
   var x: Int = _x
 }
 
+/**
+  * https://leetcode-cn.com/problems/reverse-linked-list/
+  */
 object Solution {
   def reverseList(head: ListNode): ListNode = {
     var cur = head
