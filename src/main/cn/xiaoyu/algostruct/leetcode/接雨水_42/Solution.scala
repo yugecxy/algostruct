@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.leetcode.接雨水_42
+package cn.xiaoyu.algostruct.leetcode.接雨水_42
 
 
 object Solution {

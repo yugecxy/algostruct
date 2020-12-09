@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.leetcode.数组中出现次数超过一半的数字_39
+package cn.xiaoyu.algostruct.leetcode.___数组中出现次数超过一半的数字_39
 
 import scala.collection.mutable
 
