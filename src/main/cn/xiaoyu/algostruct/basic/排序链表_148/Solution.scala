@@ -61,21 +61,27 @@ object Solution {
       val rightHead = middle.next
       middle.next = null
 
-      mergeSort(recursive(middle), recursive(rightHead))
+      mergeSort(recursive(head), recursive(rightHead))
     }
 
+    if (head == null) return null
     recursive(head)
   }
 
   def main(args: Array[String]): Unit = {
-    val a = new ListNode(9)
-    val b = new ListNode(2)
-    val c = new ListNode(7)
+    val a = new ListNode(2)
+    val b = new ListNode(4)
+    val c = new ListNode(9)
     val d = new ListNode(1)
+    val e = new ListNode(7)
+    val f = new ListNode(10)
     //    val e = new ListNode(5)
     a.next = b
     b.next = c
     c.next = d
+    d.next = e
+    e.next = f
+
     //    d.next = e
     val x = sortList(a)
     println(x.x)
