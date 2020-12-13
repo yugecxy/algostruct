@@ -1,7 +1,7 @@
-package xiaoyu.algostruct.offer.数值的整数次方_16
+package cn.xiaoyu.algostruct.offer.数值的整数次方
 
 /**
-  * 该题主要考察对边界条件的考虑
+  * https://leetcode-cn.com/problems/shu-zhi-de-zheng-shu-ci-fang-lcof/
   */
 object Solution {
 

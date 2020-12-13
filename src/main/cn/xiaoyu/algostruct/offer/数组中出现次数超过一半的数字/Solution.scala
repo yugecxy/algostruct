@@ -1,9 +1,9 @@
-package cn.xiaoyu.algostruct.offer.数组中出现次数超过一半的数字_39
+package cn.xiaoyu.algostruct.offer.数组中出现次数超过一半的数字
 
 import scala.collection.mutable
 
 /**
-  * 最佳解法：摩尔投票法 时间:O(n) 空间复杂度:O(1)
+  * https://leetcode-cn.com/problems/shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof/
   */
 object Solution {
   def majorityElement(nums: Array[Int]): Int = {
