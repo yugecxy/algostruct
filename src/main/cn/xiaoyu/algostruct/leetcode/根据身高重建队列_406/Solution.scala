@@ -1,7 +1,10 @@
-package xiaoyu.algostruct.leetcode.根据身高重建队列_406
+package cn.xiaoyu.algostruct.leetcode.根据身高重建队列_406
 
 import scala.collection.mutable
 
+/**
+  * https://leetcode-cn.com/problems/queue-reconstruction-by-height/
+  */
 object Solution {
 
   def reconstructQueue(people: Array[Array[Int]]): Array[Array[Int]] = {
