@@ -1,7 +1,7 @@
-package xiaoyu.algostruct.offer.把数组排成最小的数
+package cn.xiaoyu.algostruct.offer.todo_把数组排成最小的数
 
 /**
-  * 自定义排序规则，然后套用排序的思想即可
+  * https://leetcode-cn.com/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof/
   */
 object Solution {
   def minNumber(nums: Array[Int]): String = {
