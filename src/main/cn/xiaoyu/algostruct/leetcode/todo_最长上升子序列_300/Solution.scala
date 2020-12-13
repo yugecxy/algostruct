@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.leetcode.最长上升子序列_todo_300
+package cn.xiaoyu.algostruct.leetcode.todo_最长上升子序列_300
 
 /**
   * 暂时超过时间限制

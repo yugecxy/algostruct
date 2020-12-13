@@ -1,7 +1,10 @@
-package xiaoyu.algostruct.leetcode.最长有效括号_32
+package cn.xiaoyu.algostruct.leetcode.todo_最长有效括号_32
 
 import scala.collection.mutable
 
+/**
+  * https://leetcode-cn.com/problems/longest-valid-parentheses/
+  */
 object Solution {
 
   def longestValidParentheses(s: String): Int = {
