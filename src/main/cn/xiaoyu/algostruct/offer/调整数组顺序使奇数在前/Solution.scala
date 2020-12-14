@@ -1,7 +1,7 @@
-package xiaoyu.algostruct.offer.调整数组顺序使奇数在前_21
+package cn.xiaoyu.algostruct.offer.调整数组顺序使奇数在前
 
 /**
-  * 空间复杂度O(1)
+  * https://leetcode-cn.com/problems/diao-zheng-shu-zu-shun-xu-shi-qi-shu-wei-yu-ou-shu-qian-mian-lcof/
   */
 object Solution {
   def exchange(nums: Array[Int]): Array[Int] = {

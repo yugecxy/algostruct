@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.offer.链表中倒数第k个节点_22
+package cn.xiaoyu.algostruct.offer.链表中倒数第k个节点
 
 class ListNode(var _x: Int = 0) {
   var next: ListNode = null
@@ -6,7 +6,7 @@ class ListNode(var _x: Int = 0) {
 }
 
 /**
-  * 双指针
+  * https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/
   */
 object Solution {
   def getKthFromEnd(head: ListNode, k: Int): ListNode = {
