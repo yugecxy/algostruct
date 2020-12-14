@@ -1,6 +1,8 @@
-package xiaoyu.algostruct.offer.矩阵中的路径_12
+package cn.xiaoyu.algostruct.offer.矩阵中的路径
 
-
+/**
+  * https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/
+  */
 object Solution {
   def exist(board: Array[Array[Char]], word: String): Boolean = {
     val m = board.length
