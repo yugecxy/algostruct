@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.offer.机器人的运动范围_13
+package cn.xiaoyu.algostruct.offer.机器人的运动范围
 
 import scala.collection.mutable
 

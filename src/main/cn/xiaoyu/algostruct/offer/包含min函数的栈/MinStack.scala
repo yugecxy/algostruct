@@ -48,6 +48,6 @@ object x {
     obj.pop()
     obj.pop()
     obj.pop()
-   println(obj.min())
+    println(obj.min())
   }
 }
