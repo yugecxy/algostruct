@@ -1,10 +1,13 @@
-package xiaoyu.algostruct.offer.删除链表的节点_18
+package cn.xiaoyu.algostruct.offer.删除链表的节点
 
 class ListNode(var _x: Int = 0) {
   var next: ListNode = null
   var x: Int = _x
 }
 
+/**
+  * https://leetcode-cn.com/problems/shan-chu-lian-biao-de-jie-dian-lcof/
+  */
 object Solution {
   def deleteNode(head: ListNode, `val`: Int): ListNode = {
     if (head == null) return null
