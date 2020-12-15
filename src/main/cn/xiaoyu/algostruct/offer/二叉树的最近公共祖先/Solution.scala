@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.offer.二叉树的最近公共祖先_68
+package cn.xiaoyu.algostruct.offer.二叉树的最近公共祖先
 
 // https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/
 
@@ -10,7 +10,7 @@ class TreeNode(var _value: Int) {
 }
 
 /**
-  * 后续遍历
+  * https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/
   */
 class Solution {
   def lowestCommonAncestor(root: TreeNode, p: TreeNode, q: TreeNode): TreeNode = {
