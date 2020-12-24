@@ -1,4 +1,5 @@
-package xiaoyu.algostruct.offer.二叉树的镜像_27
+package cn.xiaoyu.algostruct.offer.二叉树的镜像
+
 //https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/
 
 class TreeNode(var _value: Int) {
@@ -7,13 +8,16 @@ class TreeNode(var _value: Int) {
   var right: TreeNode = null
 }
 
+/**
+  * https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/
+  */
 object Solution {
   def mirrorTree(root: TreeNode): TreeNode = {
     if (root == null) return null
-    val tmpNode = new TreeNode(root.value)
-    tmpNode.right = mirrorTree(root.left)
-    tmpNode.left = mirrorTree(root.right)
-    tmpNode
+    val tmp = mirrorTree(root.left)
+    root.left = mirrorTree(root.right)
+    root.right = tmp
+    root
   }
 
   def main(args: Array[String]): Unit = {

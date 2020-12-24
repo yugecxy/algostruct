@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.offer.包含min函数的栈_30
+package cn.xiaoyu.algostruct.offer.包含min函数的栈
 
 class Node(x: Int, _minValue: Int) {
   var next: Node = null
@@ -7,6 +7,9 @@ class Node(x: Int, _minValue: Int) {
   var value: Int = x
 }
 
+/**
+  * https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/
+  */
 class MinStack {
   var cur: Node = null
   var preMinValue: Int = Int.MaxValue
@@ -45,6 +48,6 @@ object x {
     obj.pop()
     obj.pop()
     obj.pop()
-   println(obj.min())
+    println(obj.min())
   }
 }

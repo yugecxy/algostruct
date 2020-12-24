@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.offer.对称的二叉树
+package cn.xiaoyu.algostruct.offer.对称的二叉树
 
 class TreeNode(var _value: Int) {
   var value: Int = _value
@@ -6,15 +6,15 @@ class TreeNode(var _value: Int) {
   var right: TreeNode = null
 }
 
+/**
+  * https://leetcode-cn.com/problems/dui-cheng-de-er-cha-shu-lcof/
+  */
 object Solution {
   def isSymmetric(root: TreeNode): Boolean = {
-    def dfs(root1: TreeNode, root2: TreeNode): Boolean = {
-      if (root1 == null && root2 == null) true
-      else if (root1 != null && root2 != null) {
-        if (root1.value != root2.value) return false
-        dfs(root1.left, root2.right) && dfs(root1.right, root2.left)
-      }
-      else false
+    def dfs(left: TreeNode, right: TreeNode): Boolean = {
+      if (left == null && right == null) return true
+      if (left == null || right == null) return false
+      left.value == right.value && dfs(left.left, right.right) && dfs(left.right, right.left)
     }
 
     if (root == null) return true

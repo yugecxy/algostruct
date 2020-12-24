@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.offer.从上到下打印二叉树2_32
+package cn.xiaoyu.algostruct.offer.从上到下打印二叉树
 
 import scala.collection.mutable
 

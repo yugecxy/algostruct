@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.offer.二维数组中的查找_面试题04
+package cn.xiaoyu.algostruct.offer.二维数组中的查找
 
 /**
   * https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/

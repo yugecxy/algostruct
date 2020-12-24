@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.offer.树的子结构
+package cn.xiaoyu.algostruct.offer.___树的子结构
 
 
 class TreeNode(var _value: Int) {
@@ -9,16 +9,15 @@ class TreeNode(var _value: Int) {
 
 object Solution {
   def isSubStructure(A: TreeNode, B: TreeNode): Boolean = {
-    if (B == null || A == null) return false
+    if (A == null || B == null) return false
 
-    def findByDeep(x: TreeNode, y: TreeNode): Boolean = {
-      if (y == null) true
-      else if (x == null) false
-      else if (x.value != y.value) false
-      else findByDeep(x.left, y.left) && findByDeep(x.right, y.right)
+    def find(a: TreeNode, b: TreeNode): Boolean = {
+      if (b == null) true
+      else if (a == null) false
+      else a.value == b.value && find(a.left, b.left) && find(a.right, b.right)
     }
 
-    findByDeep(A, B) || isSubStructure(A.left, B) || isSubStructure(A.right, B)
+    find(A, B) || isSubStructure(A.left, B) || isSubStructure(A.right, B)
   }
 
   def main(args: Array[String]): Unit = {
