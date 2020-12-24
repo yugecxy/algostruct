@@ -2,7 +2,7 @@ package cn.xiaoyu.algostruct.accumulate.位运算.找出只出现过一次的数
 
 /**
   * 如果除了一个数字以外，其他数字都出现了两次，那么如何找到出现一次的数字？
-  * 全员求异或即可
+  * 全员求异或即可。相同的数异或结果是0，而0异或一个的结果还是这个结果本身
   */
 object Solution {
 
@@ -11,7 +11,7 @@ object Solution {
   }
 
   def main(args: Array[String]): Unit = {
-    println(find(Array(2,4,1,4,2)))
+    println(find(Array(2, 4, 4, 2, 6)))
   }
 
 }
