@@ -39,7 +39,7 @@ object Solution {
       }
 
       if (h1 != null) h1 = h1.next
-      if (h1 != null) h2 = h2.next
+      if (h2 != null) h2 = h2.next
     }
 
     if (bit != 0) tail.next = new ListNode(bit, null)
