@@ -8,18 +8,29 @@ import scala.collection.mutable
 object Solution {
   def permutation(s: String): Array[String] = {
 
-    val set = new mutable.HashSet[String]()
+    var ret = Array[String]()
 
-    def dfs(i: Int, accStr: String): Array[String] = {
-      if (i == s.length) return if (set.contains(accStr)) Array() else {
-        set.add(accStr)
-        Array(accStr)
+    def dfs(x: Int, res: String, str: Array[Char]): Unit = {
+      if (x == s.length) {
+        ret :+= res
+        return
       }
-      val iterators = s.diff(accStr).toArray
-      iterators.flatMap(c => dfs(i + 1, accStr + c))
+
+      val set = mutable.HashSet[Char]()
+      str.indices.foreach(i => {
+        if (str(i) != ',' && !set.contains(str(i))) {
+          val tmp = str(i)
+          str(i) = ','
+          dfs(x + 1, res ++ tmp.toString, str)
+          str(i) = tmp
+          set.add(tmp)
+        }
+      })
     }
 
-    dfs(0, "")
+    dfs(0, "", s.toCharArray)
+
+    ret
   }
 
   /**
