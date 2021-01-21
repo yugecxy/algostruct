@@ -2,6 +2,9 @@ package cn.xiaoyu.algostruct.leetcode.___最长无重复子串_3
 
 import scala.collection.mutable
 
+/**
+  * https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+  */
 object Solution {
   def lengthOfLongestSubstring(s: String): Int = {
     var max = 0

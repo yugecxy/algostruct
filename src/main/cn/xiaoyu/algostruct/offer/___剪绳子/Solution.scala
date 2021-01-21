@@ -2,7 +2,11 @@ package cn.xiaoyu.algostruct.offer.___剪绳子
 
 import scala.collection.mutable
 
+/**
+  * https://leetcode-cn.com/problems/jian-sheng-zi-lcof/
+  */
 object Solution {
+
   def cuttingRope(n: Int): Int = {
     val map = mutable.HashMap[Int, Int]()
 
@@ -19,6 +23,6 @@ object Solution {
   }
 
   def main(args: Array[String]): Unit = {
-    println(cuttingRope(29))
+    println(4*3*2)
   }
 }

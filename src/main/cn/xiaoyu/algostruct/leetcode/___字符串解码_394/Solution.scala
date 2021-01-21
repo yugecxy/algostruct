@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.leetcode.___字符串解码_394
+package cn.xiaoyu.algostruct.leetcode.___字符串解码_394
 
 import scala.collection.mutable.Stack
 
