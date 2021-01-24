@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.leetcode.三数之和_15
+package cn.xiaoyu.algostruct.leetcode.三数之和_15
 
 import scala.collection.mutable.ListBuffer
 

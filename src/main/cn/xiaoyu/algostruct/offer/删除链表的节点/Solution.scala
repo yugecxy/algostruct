@@ -11,15 +11,16 @@ class ListNode(var _x: Int = 0) {
 object Solution {
   def deleteNode(head: ListNode, `val`: Int): ListNode = {
     if (head == null) return null
-    var cur: ListNode = head
+    var ret = head
+    var cur: ListNode = ret
     var pre: ListNode = null
-    while (cur.next != null && cur.x != `val`) { //假设每次要删除的数据都在链表里
+    while (cur != null) { //假设每次要删除的数据都在链表里
+      if (cur.x == `val`) {
+        if (pre == null) ret = ret.next else pre.next = cur.next
+      }
       pre = cur
       cur = cur.next
     }
-    if (pre == null) head.next else {
-      pre.next = cur.next
-      head
-    }
+    ret
   }
 }

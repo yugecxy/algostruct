@@ -28,6 +28,24 @@ object Solution {
     res.toList
   }
 
+  /**
+    * @return 常规
+    */
+  def levelOrder2(root: TreeNode): List[Int] = {
+    val queue: mutable.Queue[TreeNode] = new mutable.Queue[TreeNode]()
+    val res = new mutable.ListBuffer[Int]()
+    if (root == null) return res.toList
+    queue.enqueue(root)
+    while (queue.nonEmpty) {
+      val node = queue.dequeue()
+      res.append(node.value)
+      if (node.left != null) queue.enqueue(node.left)
+      if (node.right != null) queue.enqueue(node.right)
+    }
+    res.toList
+  }
+
+
   def main(args: Array[String]): Unit = {
     val a = new TreeNode(3)
     val b = new TreeNode(9)
@@ -38,7 +56,7 @@ object Solution {
     a.right = c
     b.left = d
     b.right = e
-    val res = levelOrder(a)
+    val res = levelOrder2(a)
     res.foreach(println(_))
   }
 }

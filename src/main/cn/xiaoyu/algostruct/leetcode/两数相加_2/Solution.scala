@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.leetcode.两数相加_2
+package cn.xiaoyu.algostruct.leetcode.两数相加_2
 
 class ListNode(_x: Int = 0, _next: ListNode = null) {
   var next: ListNode = _next
