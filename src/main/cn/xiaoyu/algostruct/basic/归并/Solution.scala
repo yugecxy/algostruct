@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.basic.归并
+package cn.xiaoyu.algostruct.basic.归并
 
 import scala.collection.mutable.ArrayBuffer
 
