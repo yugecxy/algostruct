@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.leetcode.丑数
+package cn.xiaoyu.algostruct.leetcode.___丑数
 
 object Solution {
   def isUgly(n: Int): Boolean = {
