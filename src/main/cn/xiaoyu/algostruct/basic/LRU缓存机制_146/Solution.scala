@@ -2,84 +2,72 @@ package cn.xiaoyu.algostruct.basic.LRU缓存机制_146
 
 import scala.collection.mutable
 
-class CachedNode(key: Int = -1) {
-  var value: Int = key
-  var next: CachedNode = _
-  var pre: CachedNode = _
+class LRUNode(_key: Int = -1) {
+  var key: Int = _key
+  var next: LRUNode = null
+  var prev: LRUNode = null
 }
 
-class LRUCache {
+class LRUCache(capacity: Int) {
+  var headNode: LRUNode = null
+  var tailNode: LRUNode = null
+  var data = mutable.HashMap[Int, (Int, LRUNode)]()
 
-  def this(_capacity: Int) = {
-    this()
-    this.capacity = _capacity
-    this.head = new CachedNode()
-    this.tail = new CachedNode()
-    head.next = tail
-    tail.pre = head
-  }
-
-  val data: mutable.HashMap[Int, (Int, CachedNode)] = mutable.HashMap[Int, (Int, CachedNode)]()
-
-  //保存
-  var head: CachedNode = _
-  var tail: CachedNode = _
-  var capacity: Int = _
-
-  def addNodeToTail(node: CachedNode): Unit = {
-    tail.pre.next = node
-    node.pre = tail.pre
-    node.next = tail
-    tail.pre = node
-  }
-
-
-  def removeNode(node: CachedNode): Unit = {
-    node.pre.next = node.next
-    node.next.pre = node.pre
+  def init() = {
+    headNode = new LRUNode()
+    tailNode = new LRUNode()
+    headNode.next = tailNode
+    tailNode.prev = headNode
   }
 
   def get(key: Int): Int = {
     if (!data.contains(key)) return -1
-
-    val (value, node) = data(key)
-    removeNode(node)
-    addNodeToTail(node)
-    value
+    moveNodeToTail(data(key)._2)
+    data(key)._1
   }
 
-  def put(key: Int, value: Int) {
+  def put(key: Int, value: Int): Unit = {
     if (!data.contains(key)) {
-      val node = new CachedNode(key)
-      addNodeToTail(node)
       if (data.size == capacity) {
-        //删除头结点
-        val toDeleteNode = head.next
-        removeNode(toDeleteNode)
-        data.remove(toDeleteNode.value)
+        val toDelete = headNode.next
+        deleteNode(toDelete)
+        data.remove(toDelete.key)
       }
-      data.put(key, (value, node))
+
+      val newNode = new LRUNode(key)
+      moveNodeToTail(newNode)
+      data.put(key, (value, newNode))
     }
     else {
-      val node = data(key)._2
-      removeNode(node)
-      addNodeToTail(node)
-      data.put(key, (value, node))
+      val item = data(key)
+      deleteNode(item._2)
+      moveNodeToTail(item._2)
+      data.put(key, (value, item._2))
     }
 
+  }
+
+  def deleteNode(node: LRUNode) = {
+    node.prev.next = node.next
+    node.next.prev = node.prev
+  }
+
+  def moveNodeToTail(node: LRUNode) = {
+    tailNode.prev.next = node
+    node.prev = tailNode.prev
+    tailNode.prev = node
+    node.next = tailNode
   }
 }
 
 object Solution {
   def main(args: Array[String]): Unit = {
-    val cache = new LRUCache(2)
-    cache.get(2)
-    cache.put(2, 1)
-    cache.put(2, 2)
-    cache.get(2)
-    cache.put(1, 1)
-    cache.put(4, 1)
-    cache.get(2)
-
+    val lru = new LRUCache(2)
+    lru.init()
+    lru.put(2, 3)
+    lru.put(3, 3)
+    lru.put(2, 5)
+    lru.put(4, 3)
+    println(lru.get(2))
   }
 }
