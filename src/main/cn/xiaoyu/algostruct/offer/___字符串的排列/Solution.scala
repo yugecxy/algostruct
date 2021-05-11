@@ -1,6 +1,7 @@
 package cn.xiaoyu.algostruct.offer.___字符串的排列
 
 import scala.collection.mutable
+import scala.collection.mutable.ListBuffer
 
 /**
   * https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/
@@ -81,7 +82,28 @@ object Solution {
     ret
   }
 
+  /**
+    * @return 求数组中和为某值的所有子数组
+    */
+  def permutation4(arr: Array[Int], sum: Int): Array[Array[Int]] = {
+    var ret = Array[Array[Int]]()
+
+    def dfs(arr: Array[Int], path: Array[Int], pathSum: Int, index: Int): Unit = {
+      if (index == arr.length) {
+        if (pathSum == sum) ret :+= path
+        return
+      }
+
+      dfs(arr, path :+ arr(index), pathSum + arr(index), index + 1)
+      dfs(arr, path, pathSum, index + 1)
+    }
+
+    dfs(arr, Array[Int](), 0, 0)
+
+    ret
+  }
+
   def main(args: Array[String]): Unit = {
-    println(permutation("aac").toSeq)
+    println(permutation4(Array(2, 3, 4, 5), 7).map(_.mkString(",")).toSeq)
   }
 }
