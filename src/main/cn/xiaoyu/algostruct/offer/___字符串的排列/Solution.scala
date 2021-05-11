@@ -60,7 +60,28 @@ object Solution {
     ret
   }
 
+  /**
+    * @return 求所有子串
+    */
+  def permutation3(s: String): Array[String] = {
+    var ret = Array[String]()
+
+    def dfs(s: Array[Char], accuArr: Array[Char], index: Int): Unit = {
+      if (index == s.length) {
+        ret :+= accuArr.mkString
+        return
+      }
+
+      dfs(s, accuArr :+ s(index), index + 1)
+      dfs(s, accuArr, index + 1)
+    }
+
+    dfs(s.toCharArray, Array[Char](), 0)
+
+    ret
+  }
+
   def main(args: Array[String]): Unit = {
-    println(permutation("aab").toSeq)
+    println(permutation("aac").toSeq)
   }
 }
