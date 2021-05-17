@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.leetcode.二叉树的最小公共祖先
+package cn.xiaoyu.algostruct.leetcode.___二叉树的最小公共祖先
 
 class TreeNode(_value: Int) {
   val value = _value

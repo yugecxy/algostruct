@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.leetcode.二叉树的直径_543
+package cn.xiaoyu.algostruct.leetcode.二叉树的直径_543
 
 class TreeNode(var _value: Int) {
   var value: Int = _value

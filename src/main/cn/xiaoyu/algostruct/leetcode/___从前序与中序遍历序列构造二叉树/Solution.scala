@@ -6,6 +6,9 @@ class TreeNode(_value: Int = 0, _left: TreeNode = null, _right: TreeNode = null)
   var right: TreeNode = _right
 }
 
+/**
+  * https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+  */
 object Solution {
   def buildTree(preorder: Array[Int], inorder: Array[Int]): TreeNode = {
     if (preorder.length != inorder.length) return null

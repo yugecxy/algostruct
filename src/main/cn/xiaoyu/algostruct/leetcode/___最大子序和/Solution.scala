@@ -9,11 +9,10 @@ object Solution {
     var max = Int.MinValue
     var sum = 0
     nums.foreach(x => {
-      if (sum < 0) sum = 0
-      sum = sum + x
+      sum = math.max(sum + x, x)
       max = math.max(sum, max)
     })
-    return max
+    max
   }
 
 }
