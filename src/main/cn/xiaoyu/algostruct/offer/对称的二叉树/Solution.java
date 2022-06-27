@@ -1,22 +1,6 @@
 package xiaoyu.algostruct.offer.对称的二叉树;
 
-class TreeNode {
-    int value;
-    TreeNode left;
-    TreeNode right;
-
-    public TreeNode(int value) {
-        this.value = value;
-    }
-
-    public void setLeft(TreeNode left) {
-        this.left = left;
-    }
-
-    public void setRight(TreeNode right) {
-        this.right = right;
-    }
-}
+import xiaoyu.algostruct.helper.TreeNode;
 
 /**
  * 请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
@@ -35,7 +19,7 @@ public class Solution {
         if (left == null && right == null) {
             return true;
         } else if (left != null && right != null) {
-            return dfs(left.left, right.right) && dfs(left.right, right.left) && left.value == right.value;
+            return dfs(left.left, right.right) && dfs(left.right, right.left) && left.val == right.val;
         } else {
             return false;
         }
