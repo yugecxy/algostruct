@@ -1,27 +1,13 @@
-class TreeNode(){
-   private int value;
-   private TreeNode left;
-   private TreeNode right;
-   public TreeNode(int value){
-     this.value = value;
-   }
-}
-
 class Solution {
-    public boolean isSymmetric(TreeNode root) {
-      if(root == null){
-        return true;
-      }
-      return dfs(root.left,root.right);
-    }
-
-    public boolean dfs(TreeNode left,TreeNode right){
-        if(left == null && right == null){
-          return true;
-        }else if(left !=null && right!=null){
-          return dfs(left.left,right.right) && dfs(left.right,right.left);
-        }else{
-          return false;
-        }
+    public boolean isUgly(int n){
+       if(n==1) return true;
+       if(n % 2 != 0 && n % 3 !=0 && n % 5 !=0){
+         return false;
+       }
+       boolean ret = true;
+       if(n % 2 == 0) ret = ret && isUgly(n/2);
+       if(n % 3 == 0) ret = ret && isUgly(n/3);
+       if(n % 5 == 0) ret = ret && isUgly(n/5);
+       return ret;
     }
 }
