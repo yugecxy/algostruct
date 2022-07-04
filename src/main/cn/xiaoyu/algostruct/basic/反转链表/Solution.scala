@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.basic.反转链表_206
+package xiaoyu.algostruct.basic.反转链表
 
 class ListNode(var _x: Int = 0) {
   var next: ListNode = null
