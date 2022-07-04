@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.accumulate.贪心算法.区间覆盖问题之最大不相交覆盖
+package xiaoyu.algostruct.Integration.贪心算法.区间覆盖问题之最大不相交覆盖
 
 object Solution {
 

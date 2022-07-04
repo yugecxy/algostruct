@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.accumulate.快速选择
+package cn.xiaoyu.algostruct.Integration.快速选择
 
 import scala.collection.mutable
 

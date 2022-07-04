@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.basic.LRU缓存机制_146
+package cn.xiaoyu.algostruct.basic.LRU缓存淘汰算法
 
 import scala.collection.mutable
 

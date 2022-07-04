@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.accumulate.气球游戏
+package cn.xiaoyu.algostruct.Integration.气球游戏
 
 import scala.collection.mutable
 

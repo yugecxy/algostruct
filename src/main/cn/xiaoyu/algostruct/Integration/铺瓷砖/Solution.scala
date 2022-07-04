@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.accumulate.铺瓷砖
+package xiaoyu.algostruct.Integration.铺瓷砖
 
 object Solution {
 
