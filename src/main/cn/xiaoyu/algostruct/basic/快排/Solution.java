@@ -12,25 +12,28 @@ public class Solution {
         if (end <= begin) {
             return;
         }
-
-        int pivot = begin;
-        int pivotVal = arr[pivot];
-        for (int i = begin + 1; i <= end; i++) {
-            if (arr[i] < pivotVal) {
-                int tmp = arr[i];
-                for (int j = i; j > pivot; j--) {
-                    arr[j] = arr[j - 1];
-                }
-                arr[pivot] = tmp;
-                pivot += 1;
-            }
-        }
-
+        int pivotIndex = doSort(arr, begin, end);
         //递左
-        quickSort(arr, begin, pivot - 1);
-
+        quickSort(arr, begin, pivotIndex - 1);
         //递右
-        quickSort(arr, pivot + 1, end);
+        quickSort(arr, pivotIndex + 1, end);
+    }
+
+    public int doSort(int[] arr, int begin, int end) {
+        int pivot = arr[begin];
+        while (begin < end) {
+            while (begin < end && arr[end] >= pivot) {
+                end--;
+            }
+            arr[begin] = arr[end];
+            while (begin < end && arr[begin] <= pivot) {
+                begin++;
+            }
+            arr[end] = arr[begin];
+        }
+        //pivot值放界限处
+        arr[begin] = pivot;
+        return begin;
     }
 
     public static void main(String[] args) {

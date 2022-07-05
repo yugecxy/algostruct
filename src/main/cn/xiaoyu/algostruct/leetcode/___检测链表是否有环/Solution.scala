@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.leetcode.检测链表是否有环
+package cn.xiaoyu.algostruct.leetcode.___检测链表是否有环
 
 class ListNode(var _x: Int = 0) {
   var next: ListNode = null
