@@ -22,7 +22,7 @@ public class Solution {
     public int doSort(int[] arr, int begin, int end) {
         int pivot = arr[begin];
         while (begin < end) {
-            while (begin < end && arr[end] >= pivot) {
+            while (begin < end && arr[end] > pivot) {
                 end--;
             }
             arr[begin] = arr[end];
@@ -37,8 +37,9 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int[] arr = new Solution().quickSort(new int[]{2, 1, 9, 4, 2, 3, 19, 14});
-        System.out.println(Arrays.toString(arr));
+        int[] arr = new int[]{1, 3, 5, 0, 2, 6};
+        new Solution().doSort(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(new Solution().quickSort(arr)));
     }
 
 }
