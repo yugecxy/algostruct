@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.leetcode.寻找重复数
+package cn.xiaoyu.algostruct.leetcode.__寻找重复数
 
 object Solution {
   // 方法一：采用位图。时间复杂度O(n)，空间复杂度 O(n)

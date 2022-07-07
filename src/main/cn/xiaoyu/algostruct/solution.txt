@@ -1,17 +1,32 @@
-class Solution{
+public class MedianFinder {
+    private PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Comparator.reverseOrder());
+    private PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
-   public boolean hasCycle(Node head){
-      Node slow = head;
-      Node fast = head.next;
-      while(fast!=null){
-        if(fast == slow) {
-            return true;
+    public MedianFinder() {
+
+    }
+
+    public void addNum(int num) {
+        if(maxHeap.peek() <= num){
+          maxHeap.offer(num);
+        }else{
+          minHeap.offer(num);
         }
-        fast = fast.next.next;
-        slow = slow.next;
-      }
-      return false;
 
-   }
+        //调整堆
+        if(maxHeap.size-minHeap.size > 1){
+          minHeap.offer(maxHeap.poll());
+        }else if(minHeap.size > maxHeap.size){
+          maxHeap.offer(minHeap.poll());
+        }
+    }
+
+    public double findMedian() {
+        if((maxHeap.size() + minHeap().size) % 2 == 0){
+          return (maxHeap.peek+minHeap.peek)/2;
+        }else{
+          return minHeap.peek();
+        }
+    }
 
 }
