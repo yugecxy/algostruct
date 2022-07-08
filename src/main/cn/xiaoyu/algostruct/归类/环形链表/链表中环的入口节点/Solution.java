@@ -7,6 +7,25 @@ import xiaoyu.algostruct.helper.ListNode;
  */
 public class Solution {
     public ListNode detectCycle(ListNode head) {
-        return null;
+        ListNode fast = head;
+        ListNode slow = head;
+        //寻找第一次相遇点
+        while (true) {
+            if (fast == null || fast.next == null) {
+                return null;
+            }
+            fast = fast.next.next;
+            slow = slow.next;
+            if (slow == fast) {
+                break;
+            }
+        }
+        //使其第二次相遇
+        fast = head;
+        while (fast != slow) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return slow;
     }
 }
