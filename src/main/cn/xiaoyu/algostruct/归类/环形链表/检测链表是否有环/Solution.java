@@ -1,14 +1,14 @@
-package xiaoyu.algostruct.leetcode.___检测链表是否有环;
+package xiaoyu.algostruct.归类.环形链表.检测链表是否有环;
 
-import xiaoyu.algostruct.helper.Node;
+import xiaoyu.algostruct.helper.ListNode;
 
 /**
  * <a href="https://leetcode-cn.com/problems/linked-list-cycle/">...</a>
  */
 public class Solution {
-    public boolean hasCycle(Node head) {
-        Node fast = head;
-        Node slow = head;
+    public boolean hasCycle(ListNode head) {
+        ListNode fast = head;
+        ListNode slow = head;
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
