@@ -1,6 +1,11 @@
-package xiaoyu.algostruct;
+package xiaoyu.algostruct.归类.重复数字.数组中重复的数字;
 
-public class Test {
+import xiaoyu.algostruct.Test;
+
+/**
+ * <a href="https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/">...</a>
+ */
+public class Solution {
     public int findRepeatNumber(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             while (i != nums[i]) {
