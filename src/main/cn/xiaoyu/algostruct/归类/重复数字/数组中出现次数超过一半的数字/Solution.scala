@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.offer.数组中出现次数超过一半的数字
+package cn.xiaoyu.algostruct.归类.重复数字.数组中出现次数超过一半的数字
 
 import scala.collection.mutable
 
