@@ -14,7 +14,7 @@ public class Solution {
                 }
                 //交换
                 int tmp = nums[i];
-                nums[i] = nums[nums[i]];
+                nums[i] = nums[tmp];
                 nums[tmp] = tmp;
             }
         }
