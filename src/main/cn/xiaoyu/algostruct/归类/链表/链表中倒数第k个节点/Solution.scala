@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.offer.链表中倒数第k个节点
+package cn.xiaoyu.algostruct.归类.链表.链表中倒数第k个节点
 
 class ListNode(var _x: Int = 0) {
   var next: ListNode = null

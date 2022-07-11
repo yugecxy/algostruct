@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.basic.排序链表
+package xiaoyu.algostruct.归类.链表.排序链表
 
 class ListNode(var _x: Int = 0) {
   var next: ListNode = null

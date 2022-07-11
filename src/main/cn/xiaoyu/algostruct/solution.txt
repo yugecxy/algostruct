@@ -1,15 +1,5 @@
 public class Solution{
-  public int majorityElement(int[] nums) {
-     int no;
-     int count = 0;
-     for(int num:nums){
-        if(count == 0){
-          no = num;
-          count+=1;
-          continue;
-        }
-        count = no == num?count + 1: count -1;
-     }
-     return no;
+  public int lengthOfLongestSubstring(String s) {
+
   }
 }

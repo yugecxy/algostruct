@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.offer.___字符串的排列
+package cn.xiaoyu.algostruct.归类.字符串.字符串的排列
 
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer

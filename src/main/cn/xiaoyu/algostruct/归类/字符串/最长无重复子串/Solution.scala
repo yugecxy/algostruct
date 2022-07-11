@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.leetcode.___最长无重复子串
+package cn.xiaoyu.algostruct.归类.字符串.最长无重复子串
 
 import scala.collection.mutable
 

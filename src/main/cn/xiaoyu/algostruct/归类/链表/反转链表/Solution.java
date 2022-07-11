@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.basic.反转链表;
+package xiaoyu.algostruct.归类.链表.反转链表;
 
 class Node {
     public Node next;
