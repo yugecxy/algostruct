@@ -1,5 +1,20 @@
 public class Solution{
   public int lengthOfLongestSubstring(String s) {
-
+    Map<Char,Integer> map = new HashMap<>(); //<char,index>
+    int curLen = 0;
+    int maxLen = Integer.Min;
+    while(int i =0;i < s.length;i++){
+       char c = s[i];
+       if(!map.contains(c)){
+          curLen += 1;
+       }else{
+          //更新curLen
+          int dupIndex=map.get(c);
+          curLen = math.min(curLen,i - dupIndex);
+       }
+       maxLen = math.max(maxLen,curLen);
+       map.put(c,i);
+    }
+    return maxLen;
   }
 }
