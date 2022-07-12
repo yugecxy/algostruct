@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.offer.___和为s的两个数字;
+package xiaoyu.algostruct.归类.二分.和为s的两个数字;
 
 import java.util.Arrays;
 
