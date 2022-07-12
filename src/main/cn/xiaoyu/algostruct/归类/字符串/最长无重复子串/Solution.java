@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.归类.字符串.最长不含重复字符的子字符串;
+package xiaoyu.algostruct.归类.字符串.最长无重复子串;
 
 import java.util.HashMap;
 import java.util.Map;

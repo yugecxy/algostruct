@@ -1,7 +1,5 @@
 package xiaoyu.algostruct.归类.重复数字.数组中重复的数字;
 
-import xiaoyu.algostruct.Test;
-
 /**
  * <a href="https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/">...</a>
  */
@@ -22,6 +20,6 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Test().findRepeatNumber(new int[]{1, 4, 3, 0, 5, 2, 3}));
+        System.out.println(new xiaoyu.algostruct.Solution().findRepeatNumber(new int[]{1, 4, 3, 0, 5, 2, 3}));
     }
 }
