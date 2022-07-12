@@ -20,6 +20,6 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(new xiaoyu.algostruct.Solution().findRepeatNumber(new int[]{1, 4, 3, 0, 5, 2, 3}));
+        System.out.println(new Solution().findRepeatNumber(new int[]{1, 4, 3, 0, 5, 2, 3}));
     }
 }

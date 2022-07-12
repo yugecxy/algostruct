@@ -1,11 +1,19 @@
 public class Solution{
-  public int maxSubArray(int[] nums) {
-     int max = Integer.MIN_VALUE;
-     int curSum = 0;
-     for(int num:nums){
-        curSum = curSum < 0 ? num : curSum + num;
-        max = math.max(curSum,max);
-     }
-     return max;
+  public String addStrings(String num1, String num2) {
+      int i = num1.length - 1;
+      int j = num2.length - 1;
+      StringBuilder sb = new StringBuilder();
+      int up = 0;
+      while(i>=0 || j>=0){
+          int a = i < 0 ? 0:Integer.parseInt(num1.charAt(i));
+          int b = j < 0 ? 0:Integer.parseInt(num2.charAt(j));
+          int sum = a + b + up;
+          int x = sum % 10;
+          up = sum / 10;
+          sb.append(i);
+      }
+      sb.append(up);
+      return sb.reverse().toString();
   }
+
 }

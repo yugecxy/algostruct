@@ -5,16 +5,8 @@ class Test {
 }
 
 public class Solution {
-    private static volatile Test test;
-
-    public static Test getSingleTonTest() {
-        if (test == null) {
-            synchronized (Solution.class) {
-                if (test == null) {
-                    test = new Test();
-                }
-            }
-        }
-        return test;
+    public static void main(String[] args) {
+        int i = '3' - '0';
+        System.out.println(i);
     }
 }
