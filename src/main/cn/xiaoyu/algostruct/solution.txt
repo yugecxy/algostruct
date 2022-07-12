@@ -1,17 +1,18 @@
 public class Solution{
-  public boolean isValid(String s) {
-      Stack<Character> stack = new Stack<>();
-      for(char c: s){
-         if(c == '\\(' || '\\{' || '\\['){
-            stack.push(c);
-            continue;
-         }
-         char top = stack.pop();
-         if(c == '\\)' && top != '\\(') return false;
-         if(c == '\\}' && top != '\\{') return false;
-         if(c == '\\]' && top != '\\[') return false;
-      }
-      return true;
+  public double mySqrt(int x) {
+     double left = 0;
+     double right = x;
+     while(left < right){
+        double middle = new BigDecimal((left + right)/2).setScale(6,BigDecimal.ROUND_HALF_UP).doubleValue();
+        if(middle * middle == x) {
+          return middle;
+        }
+        else if(middle * middle < x){
+          left = middle + 0.000001;
+        }else{
+          right = middle - 0.000001;
+        }
+     }
+     return left;
   }
-
 }
