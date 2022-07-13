@@ -30,7 +30,7 @@ public class Solution {
     }
 
     /**
-     * 保留整数，直接把小数去掉
+     * 保留整数（直接把小数去掉）
      */
     public int mySqrt(int x) {
         int left = 0;

@@ -1,18 +1,17 @@
 public class Solution{
-  public double mySqrt(int x) {
-     double left = 0;
-     double right = x;
-     while(left < right){
-        double middle = new BigDecimal((left + right)/2).setScale(6,BigDecimal.ROUND_HALF_UP).doubleValue();
-        if(middle * middle == x) {
-          return middle;
-        }
-        else if(middle * middle < x){
-          left = middle + 0.000001;
+  public int binarySearch(int[] arr, int value){
+      int left = 0;
+      int right = arr.length - 1;
+      while(left <= right){
+        int mid = left + ((right - left) >> 1);
+        if(arr[mid] <= value){
+           if(mid == arr.arr.length - 1 || arr[mid+1] > value){
+                return arr[mid];
+           }
+           left = mid + 1;
         }else{
-          right = middle - 0.000001;
+           right = mid - 1;
         }
-     }
-     return left;
-  }
+      }
+      return value;
 }
