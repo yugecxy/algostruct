@@ -1,8 +1,7 @@
 package xiaoyu.algostruct;
 
 public class Solution {
-    public boolean isValid(String s) {
-
-        return true;
+    public static void main(String[] args) {
+        System.out.println(1 ^ 1);
     }
 }
