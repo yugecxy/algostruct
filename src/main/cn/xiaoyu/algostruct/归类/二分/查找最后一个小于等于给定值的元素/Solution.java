@@ -18,9 +18,23 @@ public class Solution {
         return value;
     }
 
+    public int binarySearch2(int[] arr, int value) {
+        int left = 0;
+        int right = arr.length - 1;
+        while (left <= right) {
+            int mid = left + ((right - left) >> 1);
+            if (arr[mid] > value) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return arr[right];
+    }
+
     public static void main(String[] args) {
-        System.out.println(new Solution().binarySearch(
-                new int[]{9, 10, 4, 3, 6, 14}, 8
+        System.out.println(new Solution().binarySearch2(
+                new int[]{1}, 5
         ));
     }
 }
