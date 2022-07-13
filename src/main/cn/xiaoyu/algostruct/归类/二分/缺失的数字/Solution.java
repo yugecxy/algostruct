@@ -1,5 +1,8 @@
-package xiaoyu.algostruct;
+package xiaoyu.algostruct.归类.二分.缺失的数字;
 
+/**
+ * <a href="https://leetcode.cn/problems/que-shi-de-shu-zi-lcof/">...</a>
+ */
 public class Solution {
     public int missingNumber(int[] nums) {
         int i = 0, j = nums.length - 1;
@@ -9,9 +12,5 @@ public class Solution {
             else j = m - 1;
         }
         return i;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new Solution().missingNumber(new int[]{0}));
     }
 }

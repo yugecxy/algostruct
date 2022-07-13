@@ -1,34 +1,19 @@
 public class Solution{
-  public int search(int[] nums, int target) {
-     int left = 0;
-     int right = nums.length - 1;
-     while(left <= right){
-        int mid = left + (right - left) >> 1;
-        if(nums[mid] == target){
-            return target;
+  public int missingNumber(int[] nums) {
+     int l = 0;
+     int r = nums.length;
+     while(l <= r){
+        int mid = l + ((r - l) >> 1);
+        if(nums[mid] > mid){
+            if(mid == 0 || nums[mid-1] == mid - 1){
+                return nums[mid];
+            }else{
+                r = r - 1;
+            }
+        }else{
+           l += 1;
         }
-        if(targrt > nums[0]){ //应该在左边找
-           if(nums[mid] > nums[0]){ //实际在左边
-              if(nums[mid] > target){
-                 right -= 1;
-              }else{
-                 left += 1;
-              }
-           }else{
-              right -= 1;
-           }
-        }else{  //应该在右边找
-          if(nums[mid] > nums[0]){
-             left += 1;
-          }else{
-             if(nums[mid] > target){
-                right -= 1;
-             }else{
-                left += 1;
-           }
-          }
-        }
-        return -1;
      }
+     return -1;
   }
 }
