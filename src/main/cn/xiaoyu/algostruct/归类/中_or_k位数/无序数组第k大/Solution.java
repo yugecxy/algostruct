@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.basic.快排思想topK;
+package xiaoyu.algostruct.归类.中_or_k位数.无序数组第k大;
 
 /**
  * 时间复杂度：n+n/2+n/4+n/8+...+1 = 2n-1，也就是O(n)
