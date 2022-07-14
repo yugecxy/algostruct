@@ -37,7 +37,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[]{5,4,3,1,8,5};
+        int[] arr = new int[]{5, 4, 3, 1, 8, 5};
 //        new Solution().doSort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(new Solution().quickSort(arr)));
     }
