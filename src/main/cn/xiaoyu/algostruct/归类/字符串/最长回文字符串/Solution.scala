@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.leetcode.___最长回文字符串
+package cn.xiaoyu.algostruct.归类.字符串.最长回文字符串
 
 /**
   * https://leetcode-cn.com/problems/longest-palindromic-substring/

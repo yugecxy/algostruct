@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.leetcode.___从前序与中序遍历序列构造二叉树
+package cn.xiaoyu.algostruct.归类.二叉树.___从前序与中序遍历序列构造二叉树
 
 class TreeNode(_value: Int = 0, _left: TreeNode = null, _right: TreeNode = null) {
   var value: Int = _value

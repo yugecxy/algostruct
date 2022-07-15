@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.offer.顺时针打印矩阵
+package cn.xiaoyu.algostruct.归类.矩阵.顺时针打印矩阵
 
 import scala.collection.mutable
 

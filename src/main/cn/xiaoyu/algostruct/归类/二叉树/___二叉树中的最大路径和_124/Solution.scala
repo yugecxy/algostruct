@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.leetcode.___二叉树中的最大路径和_124
+package cn.xiaoyu.algostruct.归类.二叉树.___二叉树中的最大路径和_124
 
 class TreeNode(var _value: Int) {
   var value: Int = _value

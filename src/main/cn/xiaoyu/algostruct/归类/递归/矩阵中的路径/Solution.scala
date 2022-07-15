@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.offer.矩阵中的路径
+package cn.xiaoyu.algostruct.归类.递归.矩阵中的路径
 
 /**
   * https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/

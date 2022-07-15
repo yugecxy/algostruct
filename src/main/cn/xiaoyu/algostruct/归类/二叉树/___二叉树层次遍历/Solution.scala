@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.leetcode.___二叉树层次遍历
+package cn.xiaoyu.algostruct.归类.二叉树.___二叉树层次遍历
 
 import scala.collection.mutable
 

@@ -1,4 +1,4 @@
-package cn.xiaoyu.algostruct.offer.用两个栈来实现队列
+package cn.xiaoyu.algostruct.basic.用两个栈来实现队列
 
 import scala.collection.mutable.Stack
 
