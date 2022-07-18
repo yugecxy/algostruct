@@ -1,5 +1,8 @@
 package xiaoyu.algostruct;
 
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
+
 public class Solution {
     public int missingNumber(int[] nums) {
         int i = 0, j = nums.length - 1;
@@ -12,6 +15,6 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution().missingNumber(new int[]{0}));
+
     }
 }

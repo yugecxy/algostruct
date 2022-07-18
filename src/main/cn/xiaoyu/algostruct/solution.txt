@@ -1,6 +1,48 @@
-public class Solution{
-    public String longestPalindrome(String s) {
-        
-        return "";
+class MyCircularQueue {
+    private final int[] arr;
+    private int cursor;
+
+    public MyCircularQueue(int k) {
+        arr = new int[k];
+        cursor = -1;
+    }
+
+    public boolean enQueue(int value) {
+        int cursorMovedFront =  (cursor + 1) % arr.length;
+        if(arr[cursorMoved]!=0){
+          return false;
+        }
+        arr[cursorMoved] = value;
+        cursor = cursorMoved;
+    }
+
+    public boolean deQueue() {
+      if(arr.length == 0){
+         return false;
+      }
+      arr[cursor] = 0;
+      cursor =  (cursor - 1) % arr.length;
+    }
+
+    public int Front() {
+      if(arr.length == 0){
+        return 0;
+      }
+      return arr[0];
+    }
+
+    public int Rear() {
+      if(arr.length == 0){
+          return 0;
+      }
+      return arr[arr.length - 1];
+    }
+
+    public boolean isEmpty() {
+      return arr.length == 0;
+    }
+
+    public boolean isFull() {
+      return arr.length == k;
     }
 }
