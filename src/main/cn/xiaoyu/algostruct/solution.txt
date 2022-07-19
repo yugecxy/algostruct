@@ -1,6 +1,5 @@
 public class Solution {
-    public String longestPalindrome(String s) {
+    public TreeNode bstFromPreorder(int[] preorder) {
 
-        return "";
-        return "";
+    }
 }
