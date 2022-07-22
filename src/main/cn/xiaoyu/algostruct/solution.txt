@@ -1,26 +1,19 @@
 public class Solution {
-    public TreeNode bstFromPreorder(int[] preorder) {
-        if(preorder.length==0){
-          return null;
+    public List<List<Integer>> t(TreeNode node, int target){
+
+    }
+
+    public void dfs(TreeNode node,int target,List path){
+        if(node == null) {
+          return;
         }
-        TreeNode root = new TreeNode(preorder[0]);
-        Stack<TreeNode> stack = new Stack<>();
-        stack.push(root);
-        for(int i=0;i<preorder.length;i++){
-          TreeNode cur = new TreeNode(preorder[i]);
-          TreeNode top=stack.peek();
-          if(top.val > preorder[i]){
-            top.left = cur;
-            stack.push(cur);
-          }else{
-            do{
-              stack.pop();
-              top = stack.peek();
-            }
-            while(top.val < preorder[i]);
-            top.right = cur;
-          }
+
+
+
+        dfs(node.left,target - node.val, path);
+        path.
+
+        dfs(node.right,target - node.val, path);
         }
-        return root;
     }
 }
