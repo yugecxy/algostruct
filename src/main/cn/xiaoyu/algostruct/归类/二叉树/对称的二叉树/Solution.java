@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.offer.对称的二叉树;
+package xiaoyu.algostruct.归类.二叉树.对称的二叉树;
 
 import xiaoyu.algostruct.helper.TreeNode;
 
