@@ -1,4 +1,4 @@
-package xiaoyu.algostruct;
+package xiaoyu.algostruct.归类.二叉树.二叉树的最小公共祖先;
 
 import xiaoyu.algostruct.helper.TreeNode;
 

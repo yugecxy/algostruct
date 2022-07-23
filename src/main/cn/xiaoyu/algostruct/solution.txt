@@ -1,19 +1,5 @@
 public class Solution {
-    public List<List<Integer>> t(TreeNode node, int target){
+    public int maxPathSum(TreeNode root) {
 
-    }
-
-    public void dfs(TreeNode node,int target,List path){
-        if(node == null) {
-          return;
-        }
-
-
-
-        dfs(node.left,target - node.val, path);
-        path.
-
-        dfs(node.right,target - node.val, path);
-        }
     }
 }
