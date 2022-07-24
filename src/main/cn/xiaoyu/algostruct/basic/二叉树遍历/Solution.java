@@ -47,6 +47,13 @@ public class Solution {
         return ret;
     }
 
+    /**
+     * 层次
+     */
+    public List<List<Integer>> onLevel(TreeNode root) {
+        return null;
+    }
+
     public static void main(String[] args) {
 
     }
