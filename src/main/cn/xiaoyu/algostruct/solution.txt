@@ -1,16 +1,5 @@
-public class Solution {
-
-    private maxValue = Integer.Min;
-
-    public int maxPathSum(TreeNode root) {
-        if(root == null) return 0;
-
-        int left = Math.max(0,maxPathSum(root.left));
-        int right = Math.max(0,maxPathSum(root.right));
-
-        maxValue = Math.max(maxValue, left + right + root.value);
-        int maxVal = Math.max(left,right);
-        return maxVal < 0 ? root.val: root.val + maxVal;
-    }
-
+class Solution{
+  public int diameterOfBinaryTree(TreeNode root) {
+      diameterOfBinaryTree(root.left) + diameterOfBinaryTree(root.right);
+  }
 }

@@ -17,4 +17,8 @@ public class Solution {
         }
         return root;
     }
+
+    public static void main(String[] args) {
+
+    }
 }
