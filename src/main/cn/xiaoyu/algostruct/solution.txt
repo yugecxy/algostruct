@@ -2,4 +2,10 @@ class Solution{
   public int diameterOfBinaryTree(TreeNode root) {
       diameterOfBinaryTree(root.left) + diameterOfBinaryTree(root.right);
   }
+
+  I i = new I();
+  for(Employee each:Employees){
+     i.watch(each);
+     sleep(10);
+  }
 }
