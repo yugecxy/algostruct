@@ -1,20 +1,28 @@
 package xiaoyu.algostruct;
 
-import java.util.Arrays;
-
 public class Solution {
-    public String minNumber(int[] nums) {
-        String[] strings = new String[nums.length];
-        int count = 0;
-        for (int num : nums) {
-            strings[count++] = String.valueOf(num);
-        }
+    byte[] bytes;
 
-        Arrays.sort(strings, (x, y) -> (x + y).compareTo(y + x));
-        return String.join("", strings);
+    public Solution(int bitLen) {
+        bytes = new byte[bitLen / 8 + 1];
+    }
+
+    public void set(int value) {
+        int byteIndex = value / 8;
+        int bitIndex = value % 8;
+        bytes[byteIndex] |= 1 << (8 - bitIndex);
+    }
+
+    public boolean get(int value) {
+        int byteIndex = value / 8;
+        int bitIndex = value % 8;
+        return (bytes[byteIndex] & (1 << (8 - bitIndex))) != 0;
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution().minNumber(new int[]{3, 30, 34, 5, 9}));
+        Solution solution = new Solution(7);
+        solution.set(6);
+        System.out.println(solution.get(6));
     }
+
 }
