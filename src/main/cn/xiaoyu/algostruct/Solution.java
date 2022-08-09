@@ -1,28 +1,29 @@
 package xiaoyu.algostruct;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Stack;
+
+import xiaoyu.algostruct.helper.TreeNode;
+
 public class Solution {
-    byte[] bytes;
-
-    public Solution(int bitLen) {
-        bytes = new byte[bitLen / 8 + 1];
-    }
-
-    public void set(int value) {
-        int byteIndex = value / 8;
-        int bitIndex = value % 8;
-        bytes[byteIndex] |= 1 << (8 - bitIndex);
-    }
-
-    public boolean get(int value) {
-        int byteIndex = value / 8;
-        int bitIndex = value % 8;
-        return (bytes[byteIndex] & (1 << (8 - bitIndex))) != 0;
+    public int partition(int[] arr, int begin, int end) {
+        int i = begin;
+        int j = begin;
+        int pivot = arr[end];
+        while (j <= end) {
+            if (arr[j] <= pivot) {
+                int tmp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = tmp;
+                i++;
+            }
+            j++;
+        }
+        return i - 1;
     }
 
     public static void main(String[] args) {
-        Solution solution = new Solution(7);
-        solution.set(6);
-        System.out.println(solution.get(6));
-    }
 
+    }
 }

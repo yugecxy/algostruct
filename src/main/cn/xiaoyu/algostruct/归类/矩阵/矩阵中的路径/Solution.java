@@ -1,7 +1,7 @@
-package xiaoyu.algostruct.归类.递归.单词搜索;
+package xiaoyu.algostruct.归类.矩阵.矩阵中的路径;
 
 /**
- * <a href="https://leetcode.cn/problems/word-search/">...</a>
+ * <a href="https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/">...</a>
  */
 public class Solution {
     public boolean exist(char[][] board, String word) {
