@@ -9,25 +9,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-class Node {
-    String code;
-
-    public Node(String code) {
-        this.code = code;
-    }
-}
-
-class Edge {
-    String prevCode;
-    String nextCode;
-
-    public Edge(String prevCode, String nextCode) {
-        this.prevCode = prevCode;
-        this.nextCode = nextCode;
-    }
-}
-
-class ToPoSort {
+public class ToPoSort {
     private List<Edge> edges;
     private List<Node> nodes;
     public HashMap<String, List<String>> dag = new HashMap<>();
@@ -77,17 +59,11 @@ class ToPoSort {
         return ret;
     }
 
-}
-
-public class Solution {
     public static void main(String[] args) {
         List<Edge> edges = new LinkedList<Edge>() {{
             add(new Edge("a", "b"));
             add(new Edge("b", "a"));
         }};
-        Node a = new Node("a");
-        Node b = new Node("b");
-        Node c = new Node("c");
         List<Node> nodes = new LinkedList<Node>() {{
             add(new Node("a"));
             add(new Node("b"));
@@ -98,4 +74,3 @@ public class Solution {
         System.out.println(111);
     }
 }
-
