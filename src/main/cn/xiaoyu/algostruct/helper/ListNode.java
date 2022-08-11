@@ -5,9 +5,13 @@ public class ListNode {
 
     public ListNode next;
 
-    ListNode(int x) {
+    public ListNode(int x) {
         val = x;
     }
+
+    public ListNode() {
+    }
+
 
     public void setNext(ListNode next) {
         this.next = next;
