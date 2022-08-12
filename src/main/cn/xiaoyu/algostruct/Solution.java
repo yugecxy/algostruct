@@ -1,29 +1,34 @@
 package xiaoyu.algostruct;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
-import java.util.concurrent.ThreadPoolExecutor;
+class Test {
+    private class T {
+        public String m = x + "";
 
-import xiaoyu.algostruct.helper.TreeNode;
+    }
+
+    public String x = "asd";
+
+    public String y = x + "asd";
+
+    private class T2 {
+        public String m = x + "";
+    }
+
+    public void k() {
+        String x = new T().m;
+
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println(new Test().y);
+    }
+}
 
 public class Solution {
-    public int partition(int[] arr, int begin, int end) {
-        int i = begin;
-        int j = begin;
-        int pivot = arr[end];
-        while (j <= end) {
-            if (arr[j] <= pivot) {
-                int tmp = arr[j];
-                arr[j] = arr[i];
-                arr[i] = tmp;
-                i++;
-            }
-            j++;
-        }
-        return i - 1;
-    }
+    private String a = "asdasdda";
 
     public static void main(String[] args) {
     }
 }
+

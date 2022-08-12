@@ -104,6 +104,6 @@ object Solution {
   }
 
   def main(args: Array[String]): Unit = {
-    println(permutation4(Array(2, 3, 4, 5), 7).map(_.mkString(",")).toSeq)
+    println(permutation2("abcd").map(_.mkString(",")).toSeq)
   }
 }
