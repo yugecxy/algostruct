@@ -1,26 +1,11 @@
 class Solution{
-
-  public List<List<Integer>> ret = new LinkedList<>();
-
-  public List<List<Integer>> permute(int[] nums) {
-      dfs(nums,new LinkedList<Integer> trace);
-      return trace;
-  }
-
-  public void dfs(int[] nums,List<Integer> trace){
-    if(trace.size() == nums.size()){
-        ret.add(trace);
-    }
-    for(int i = 0;i++;i < nums.size()){
-       if(nums[i] == -1){
-         continue;
-       }
-
-       int tmp = nums[i];
-       trace.add(tmp);
-       nums[i] = -1;
-       dfs(nums,trace);
-       nums[i] = tmp;
-    }
+  public int maxProfit(int[] prices) {
+      int minVal = Integer.MaxValue;
+      int result = Integer.MinValue;
+      for(int price:prices){
+         result = Math.max(price-minVal, result);
+         minVal = Math.min(price,minVal);
+      }
+      return result;
   }
 }
