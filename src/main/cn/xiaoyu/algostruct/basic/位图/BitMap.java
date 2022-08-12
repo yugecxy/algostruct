@@ -1,31 +1,31 @@
 package xiaoyu.algostruct.basic.位图;
 
+import xiaoyu.algostruct.Solution;
+
 public class BitMap {
-    private final char[] bytes;
-    private final int nBits;
 
-    public BitMap(int nBits) {
-        this.nBits = nBits;
-        this.bytes = new char[nBits / 16 + 1];
+    private final byte[] bytes;
+
+    public BitMap(int capacity) {
+        bytes = new byte[capacity / 8 + 1];
     }
 
-    public void set(int k) {
-        if (k > nBits) return;
-        int byteIndex = k / 16;
-        int bitIndex = k % 16;
-        bytes[byteIndex] |= (1 << bitIndex);
+    public void set(int value) {
+        int byteIndex = value / 8;
+        int bitIndex = value % 8;
+        bytes[byteIndex] = (byte) (bytes[byteIndex] | (1 << (8 - bitIndex)));
     }
 
-    public boolean get(int k) {
-        if (k > nBits) return false;
-        int byteIndex = k / 16;
-        int bitIndex = k % 16;
-        return (bytes[byteIndex] & (1 << bitIndex)) != 0;
+    public boolean get(int value) {
+        int byteIndex = value / 8;
+        int bitIndex = value % 8;
+        return (bytes[byteIndex] & (1 << (8 - bitIndex))) != 0;
     }
+
 
     public static void main(String[] args) {
-        BitMap bitMap = new BitMap(18);
-        bitMap.set(3);
-        System.out.println(bitMap.get(3));
+        BitMap solution = new BitMap(17);
+        solution.set(12);
+        System.out.println(solution.get(12));
     }
 }

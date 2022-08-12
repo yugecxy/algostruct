@@ -1,6 +1,4 @@
-package xiaoyu.algostruct.basic.合并两个有序链表;
-
-import java.util.List;
+package xiaoyu.algostruct.归类.链表.合并两个有序链表;
 
 import xiaoyu.algostruct.helper.ListNode;
 

@@ -1,34 +1,30 @@
 package xiaoyu.algostruct;
 
-class Test {
-    private class T {
-        public String m = x + "";
-
-    }
-
-    public String x = "asd";
-
-    public String y = x + "asd";
-
-    private class T2 {
-        public String m = x + "";
-    }
-
-    public void k() {
-        String x = new T().m;
-
-    }
-
-    public static void main(String[] args) {
-
-        System.out.println(new Test().y);
-    }
-}
-
 public class Solution {
-    private String a = "asdasdda";
+
+    private final byte[] bytes;
+
+    public Solution(int capacity) {
+        bytes = new byte[capacity / 8 + 1];
+    }
+
+    public void set(int value) {
+        int byteIndex = value / 8;
+        int bitIndex = value % 8;
+        bytes[byteIndex] = (byte) (bytes[byteIndex] | (1 << (8 - bitIndex)));
+    }
+
+    public boolean get(int value) {
+        int byteIndex = value / 8;
+        int bitIndex = value % 8;
+        return (bytes[byteIndex] & (1 << (8 - bitIndex))) != 0;
+    }
+
 
     public static void main(String[] args) {
+        Solution solution = new Solution(17);
+        solution.set(12);
+        System.out.println(solution.get(12));
     }
 }
 
