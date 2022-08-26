@@ -26,9 +26,10 @@ public class Solution {
 
         //删除
         if (prev == null) {
-            return head.next;
+            head = head.next;
+        } else if (slow != null) {
+            prev.next = slow.next;
         }
-        prev.next = slow == null ? null : slow.next;
         return head;
     }
 }
