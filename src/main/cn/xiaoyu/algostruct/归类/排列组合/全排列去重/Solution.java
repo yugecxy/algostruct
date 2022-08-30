@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.归类.组合排列.全排列去重;
+package xiaoyu.algostruct.归类.排列组合.全排列去重;
 
 import java.util.HashSet;
 import java.util.LinkedList;

@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.归类.组合排列.全排列;
+package xiaoyu.algostruct.归类.排列组合.全排列;
 
 import java.util.LinkedList;
 import java.util.List;
