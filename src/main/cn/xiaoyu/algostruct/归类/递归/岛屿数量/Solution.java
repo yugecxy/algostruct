@@ -4,42 +4,33 @@ package xiaoyu.algostruct.归类.递归.岛屿数量;
  * <a href="https://leetcode.cn/problems/number-of-islands/">...</a>
  */
 public class Solution {
-    public int numIslands(char[][] grid) {
-        if (grid.length == 0 || grid[0].length == 0) {
-            return 0;
-        }
-        int rows = grid.length;
-        int cols = grid[0].length;
-        int cnt = 0;
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                char val = grid[i][j];
-                if (val == '1') {
-                    dfs(grid, i, j);
-                    cnt += 1;
-                }
-            }
-        }
-        return cnt;
-    }
+    int min = 999999999;
 
-    public void dfs(char[][] grid, int i, int j) {
-        if (i >= grid.length || i < 0 || j >= grid[0].length || j < 0 || grid[i][j] == 'p' || grid[i][j] == '0') {
+    public void dfs(int[][] grid, int i, int j, int prevValue, int acc) {
+        if (i >= grid.length || i < 0 || j >= grid[0].length || j < 0 || grid[i][j] == -1) {
             return;
         }
-        grid[i][j] = 'p';
-        dfs(grid, i, j + 1);
-        dfs(grid, i, j - 1);
-        dfs(grid, i + 1, j);
-        dfs(grid, i - 1, j);
+        if (i == grid.length - 1 && j == grid[0].length - 1) {
+            min = Math.min(acc, min);
+        }
+
+        int cur = grid[i][j];
+        int abs = Math.abs(cur - prevValue);
+        grid[i][j] = -1;
+        dfs(grid, i, j + 1, cur, acc + abs);
+        dfs(grid, i, j - 1, cur, acc + abs);
+        dfs(grid, i + 1, j, cur, acc + abs);
+        dfs(grid, i - 1, j, cur, acc + abs);
     }
 
     public static void main(String[] args) {
-        int ret = new Solution().numIslands(new char[][]{
-                {'1', '1', '0'},
-                {'1', '0', '1'},
-                {'1', '1', '0'}
-        });
-        System.out.println(ret);
+        Solution solution = new Solution();
+        int[][] grid = new int[][]{
+                {1, 2, 3},
+                {3, 4, 5},
+                {1, 1, 1}
+        };
+        solution.dfs(grid, 0, 0, 0, 0);
+        System.out.println(solution.min);
     }
 }
