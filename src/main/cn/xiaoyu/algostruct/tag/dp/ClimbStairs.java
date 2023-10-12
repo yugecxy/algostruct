@@ -7,22 +7,20 @@ package xiaoyu.algostruct.tag.dp;
  */
 public class ClimbStairs {
     public int climbStairs(int n) {
-        int[] counter = new int[n];
-        for (int i = 0; i <= n - 1; i++) {
-            int cur;
+        int[] f = new int[n];
+        for (int i = 0; i < n; i++) {
             if (i == 0) {
-                cur = 1;
+                f[i] = 1;
             } else if (i == 1) {
-                cur = 2;
+                f[i] = 2;
             } else {
-                cur = counter[i - 1] + counter[i - 2];
+                f[i] = f[i - 1] + f[i - 2];
             }
-            counter[i] = cur;
         }
-        return counter[n - 1];
+        return f[n - 1];
     }
 
     public static void main(String[] args) {
-        System.out.println(new ClimbStairs().climbStairs(3));
+        System.out.println(new ClimbStairs().climbStairs(1));
     }
 }

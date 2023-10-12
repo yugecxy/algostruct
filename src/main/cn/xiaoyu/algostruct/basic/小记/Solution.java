@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.basic.随记;
+package xiaoyu.algostruct.basic.小记;
 
 public class Solution {
     /**
