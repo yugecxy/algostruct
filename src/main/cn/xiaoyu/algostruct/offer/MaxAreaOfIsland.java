@@ -1,5 +1,8 @@
 package xiaoyu.algostruct.offer;
 
+/**
+ * <a href="https://leetcode.cn/problems/ZL6zAn/">...</a>
+ */
 public class MaxAreaOfIsland {
 
     public int maxAreaOfIsland(int[][] grid) {
