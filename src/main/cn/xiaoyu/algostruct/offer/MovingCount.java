@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.dp;
+package xiaoyu.algostruct.offer;
 
 /**
  * 地上有一个m行n列的方格，从坐标 [0,0] 到坐标 [m-1,n-1] 。
@@ -22,7 +22,7 @@ public class MovingCount {
                 boolean right = x + 1 < m && arr[x + 1][y];
                 boolean up = y + 1 < n && arr[x][y + 1];
                 boolean down = y - 1 >= 0 && arr[x][y - 1];
-                boolean cur = (left || right || up || down) && getSumBySplit(x) + getSumBySplit(y) <= k;
+                boolean cur = (left || up || right || down) && getSumBySplit(x) + getSumBySplit(y) <= k;
                 if (cur) {
                     cnt += 1;
                     arr[x][y] = true;
@@ -32,6 +32,31 @@ public class MovingCount {
         return cnt;
     }
 
+    public int wardrobeFinishing(int m, int n, int cnt) {
+        boolean[][] arr = new boolean[m][n];
+        int num = 0;
+        for (int x = 0; x < m; x++) {
+            for (int y = 0; y < n; y++) {
+                if (x == 0 && y == 0 && getSumBySplit(x) + getSumBySplit(y) <= cnt) {
+                    num += 1;
+                    arr[x][y] = true;
+                    continue;
+                }
+                boolean left = x - 1 >= 0 && arr[x - 1][y];
+                boolean up = y - 1 >= 0 && arr[x][y - 1];
+                boolean cur = (left || up) && getSumBySplit(x) + getSumBySplit(y) <= cnt;
+                if (cur) {
+                    num += 1;
+                    arr[x][y] = true;
+                } else {
+                    System.out.println(x + "," + y);
+                }
+            }
+        }
+        return num;
+    }
+
+
     public int getSumBySplit(int num) {
         int sum = 0;
         for (Character i : String.valueOf(num).toCharArray()) {
@@ -40,7 +65,8 @@ public class MovingCount {
         return sum;
     }
 
+
     public static void main(String[] args) {
-        System.out.println(new MovingCount().movingCount(3, 1, 0));
+        System.out.println(new MovingCount().wardrobeFinishing(3, 5, 4));
     }
 }
