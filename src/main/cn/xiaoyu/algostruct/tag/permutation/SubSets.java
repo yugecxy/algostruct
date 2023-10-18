@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.排列组合;
+package xiaoyu.algostruct.tag.permutation;
 
 import java.util.LinkedList;
 import java.util.List;

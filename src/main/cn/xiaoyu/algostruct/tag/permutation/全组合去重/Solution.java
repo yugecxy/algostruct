@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.排列组合.全组合去重;
+package xiaoyu.algostruct.tag.permutation.全组合去重;
 
 import java.util.LinkedList;
 import java.util.List;

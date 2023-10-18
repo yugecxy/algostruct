@@ -7,4 +7,12 @@ public class Solution {
     public int getSumBySplitBit(int num) {
         return -1;
     }
+
+    /**
+     * char和int互转
+     */
+    public void intToChar() {
+        int a = '3' - '0'; //a = 3
+        char ac = 3 + '0'; // ac = '3'
+    }
 }

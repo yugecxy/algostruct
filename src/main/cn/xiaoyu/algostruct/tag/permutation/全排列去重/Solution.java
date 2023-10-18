@@ -1,8 +1,9 @@
-package xiaoyu.algostruct.tag.排列组合.全排列;
+package xiaoyu.algostruct.tag.permutation.全排列去重;
 
-import java.util.Arrays;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * <a href="https://leetcode.cn/problems/permutations/">...</a>
@@ -11,8 +12,7 @@ public class Solution {
     public List<List<Integer>> ret = new LinkedList<>();
 
     public List<List<Integer>> permute(int[] nums) {
-//        dfs(nums, new LinkedList<>());
-        dfs(nums, new Integer[nums.length], 0, new boolean[nums.length]);
+        dfs(nums, new LinkedList<>());
         return ret;
     }
 
@@ -21,8 +21,9 @@ public class Solution {
             ret.add(new LinkedList<>(trace));
             return;
         }
+        Set<Integer> set = new HashSet<>();
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == Integer.MIN_VALUE) {
+            if (nums[i] == Integer.MIN_VALUE || set.contains(nums[i])) {
                 continue;
             }
             trace.add(nums[i]);
@@ -32,27 +33,13 @@ public class Solution {
             dfs(nums, trace);
             nums[i] = tmp;
 
+            set.add(nums[i]);
             trace.remove(trace.size() - 1);
         }
     }
 
-    public void dfs(int[] nums, Integer[] current, int pos, boolean[] trace) {
-        if (pos == nums.length) {
-            ret.add(new LinkedList<>(Arrays.asList(current)));
-            return;
-        }
-        for (int i = 0; i < nums.length; i++) {
-            if (!trace[i]) {
-                current[pos] = nums[i];
-                trace[i] = true;
-                dfs(nums, current, pos + 1, trace);
-                trace[i] = false;
-            }
-        }
-    }
-
     public static void main(String[] args) {
-        int[] nums = new int[]{1, 2, 3};
+        int[] nums = new int[]{1, 2, 2};
         List<List<Integer>> list1 = new Solution().permute(nums);
         System.out.println(1111);
     }

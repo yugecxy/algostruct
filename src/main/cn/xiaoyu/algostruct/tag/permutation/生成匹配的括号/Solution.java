@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.排列组合.生成匹配的括号;
+package xiaoyu.algostruct.tag.permutation.生成匹配的括号;
 
 import java.util.LinkedList;
 import java.util.List;
