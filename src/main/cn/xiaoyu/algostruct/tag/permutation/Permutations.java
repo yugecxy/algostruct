@@ -16,23 +16,19 @@ public class Permutations {
         return ret;
     }
 
-    public void dfs(int[] nums, List<Integer> trace) {
-        if (trace.size() >= nums.length) {
-            ret.add(new LinkedList<>(trace));
+    public void dfs(int[] nums, List<Integer> current, boolean[] trace) {
+        if (current.size() == nums.length) {
+            ret.add(new LinkedList<>(current));
             return;
         }
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == Integer.MIN_VALUE) {
-                continue;
+            if (!trace[i]) {
+                current.add(nums[i]);
+                trace[i] = true;
+                dfs(nums, current, trace);
+                trace[i] = false;
+                current.remove(current.size() - 1);
             }
-            trace.add(nums[i]);
-
-            int tmp = nums[i];
-            nums[i] = Integer.MIN_VALUE;
-            dfs(nums, trace);
-            nums[i] = tmp;
-
-            trace.remove(trace.size() - 1);
         }
     }
 
@@ -53,6 +49,9 @@ public class Permutations {
 
 
     public static void main(String[] args) {
-
+        int[] nums = {1, 2, 3};
+        Permutations permutations = new Permutations();
+        permutations.dfs(nums, new LinkedList<>(), new boolean[3]);
+        System.out.println(permutations.ret);
     }
 }
