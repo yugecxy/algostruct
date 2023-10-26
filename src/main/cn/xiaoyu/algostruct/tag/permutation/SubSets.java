@@ -7,20 +7,20 @@ public class SubSets {
     List<List<Integer>> ret = new LinkedList<>();
 
     public List<List<Integer>> getAllSub(List<Integer> input) {
-        dfs(input, new LinkedList<>(), 0);
+        dfs(input, 0, new LinkedList<>());
         return ret;
     }
 
-    public void dfs(List<Integer> input, List<Integer> trace, int step) {
+    public void dfs(List<Integer> input, int step, List<Integer> cur) {
         if (step == input.size()) {
-            ret.add(trace);
+            ret.add(new LinkedList<>(cur));
             return;
         }
-        for (int i = step; i < input.size(); i++) {
-            trace.add(input.get(i));
-            dfs(input, trace, i + 1);
-            trace.remove(trace.size() - 1);
-        }
+        dfs(input, step + 1, cur);
+
+        cur.add(input.get(step));
+        dfs(input, step + 1, cur);
+        cur.remove(cur.size() - 1);
     }
 
     public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class SubSets {
             add(3);
         }};
         List<List<Integer>> ret = new SubSets().getAllSub(input);
-        System.out.println(111);
+        System.out.println(ret);
     }
 }
 
