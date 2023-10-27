@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.permutation.生成匹配的括号;
+package xiaoyu.algostruct.tag.permutation;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * <a href="https://leetcode.cn/problems/IDBivT/">...</a>
  */
-public class Solution {
+public class GenerateParenthesis {
     public static List<String> ret = new LinkedList<>();
 
     public static List<String> getAllSets(int n) {
