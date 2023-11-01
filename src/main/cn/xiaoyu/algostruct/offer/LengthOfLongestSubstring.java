@@ -1,12 +1,9 @@
-package xiaoyu.algostruct.tag.字符串.最长无重复子串;
+package xiaoyu.algostruct.offer;
 
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * <a href="https://leetcode.cn/problems/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof/">...</a>
- */
-public class Solution {
+public class LengthOfLongestSubstring {
     public int lengthOfLongestSubstring(String s) {
         Map<Character, Integer> map = new HashMap<>(); //<char,index>
         int curLen = 0;
@@ -24,9 +21,5 @@ public class Solution {
             map.put(c, i);
         }
         return maxLen;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new Solution().lengthOfLongestSubstring("tmmzuxt"));
     }
 }
