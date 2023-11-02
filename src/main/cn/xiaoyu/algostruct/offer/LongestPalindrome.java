@@ -1,9 +1,6 @@
-package xiaoyu.algostruct.tag.字符串.最长回文字符串;
+package xiaoyu.algostruct.offer;
 
-/**
- * <a href="https://leetcode-cn.com/problems/longest-palindromic-substring/">...</a>
- */
-public class Solution {
+public class LongestPalindrome {
     public int calPalindrome(String s, int left, int right) {
         int len = right == left ? -1 : 0;
         while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
@@ -31,9 +28,5 @@ public class Solution {
         } else {
             return s.substring(center - (maxLen / 2), center + (maxLen / 2) + 1);
         }
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new Solution().longestPalindrome("babad"));
     }
 }
