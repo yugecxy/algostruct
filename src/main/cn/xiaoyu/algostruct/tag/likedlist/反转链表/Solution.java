@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.链表.反转链表;
+package xiaoyu.algostruct.tag.likedlist.反转链表;
 
 class Node {
     public Node next;

@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.链表.合并两个有序链表;
+package xiaoyu.algostruct.tag.likedlist.合并两个有序链表;
 
 import xiaoyu.algostruct.helper.ListNode;
 

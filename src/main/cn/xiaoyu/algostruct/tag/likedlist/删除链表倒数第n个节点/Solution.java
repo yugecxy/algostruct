@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.链表.删除链表倒数第n个节点;
+package xiaoyu.algostruct.tag.likedlist.删除链表倒数第n个节点;
 
 
 import xiaoyu.algostruct.helper.ListNode;
