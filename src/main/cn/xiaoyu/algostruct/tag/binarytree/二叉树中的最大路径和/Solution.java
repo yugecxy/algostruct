@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.二叉树.二叉树中的最大路径和;
+package xiaoyu.algostruct.tag.binarytree.二叉树中的最大路径和;
 
 import xiaoyu.algostruct.helper.TreeNode;
 

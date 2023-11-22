@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.二叉树.二叉树中和为某一个值的路径;
+package xiaoyu.algostruct.tag.binarytree.二叉树中和为某一个值的路径;
 
 import java.util.LinkedList;
 import java.util.List;

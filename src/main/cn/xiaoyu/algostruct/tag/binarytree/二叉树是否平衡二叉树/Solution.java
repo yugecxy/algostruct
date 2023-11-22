@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.二叉树.二叉树是否平衡二叉树;
+package xiaoyu.algostruct.tag.binarytree.二叉树是否平衡二叉树;
 
 import xiaoyu.algostruct.helper.TreeNode;
 

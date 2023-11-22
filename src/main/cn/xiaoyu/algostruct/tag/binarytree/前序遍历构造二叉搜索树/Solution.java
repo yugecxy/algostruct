@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.二叉树.前序遍历构造二叉搜索树;
+package xiaoyu.algostruct.tag.binarytree.前序遍历构造二叉搜索树;
 
 import java.util.Stack;
 

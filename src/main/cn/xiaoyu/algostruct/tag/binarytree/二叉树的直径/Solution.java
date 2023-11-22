@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.二叉树.二叉树的直径;
+package xiaoyu.algostruct.tag.binarytree.二叉树的直径;
 
 import xiaoyu.algostruct.helper.TreeNode;
 

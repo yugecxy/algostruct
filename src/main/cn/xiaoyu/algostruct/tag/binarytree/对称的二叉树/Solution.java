@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.二叉树.对称的二叉树;
+package xiaoyu.algostruct.tag.binarytree.对称的二叉树;
 
 import xiaoyu.algostruct.helper.TreeNode;
 

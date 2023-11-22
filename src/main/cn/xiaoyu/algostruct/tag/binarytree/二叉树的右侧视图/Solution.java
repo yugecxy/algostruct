@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.二叉树.二叉树的右侧视图;
+package xiaoyu.algostruct.tag.binarytree.二叉树的右侧视图;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.二叉树.从前序与中序遍历序列构造二叉树;
+package xiaoyu.algostruct.tag.binarytree.从前序与中序遍历序列构造二叉树;
 
 
 import xiaoyu.algostruct.helper.TreeNode;

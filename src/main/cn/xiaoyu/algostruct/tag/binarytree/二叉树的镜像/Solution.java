@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.二叉树.二叉树的镜像;
+package xiaoyu.algostruct.tag.binarytree.二叉树的镜像;
 
 import xiaoyu.algostruct.helper.TreeNode;
 

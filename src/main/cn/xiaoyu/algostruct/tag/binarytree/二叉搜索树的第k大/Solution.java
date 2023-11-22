@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.二叉树.二叉搜索树的第k大;
+package xiaoyu.algostruct.tag.binarytree.二叉搜索树的第k大;
 
 import xiaoyu.algostruct.helper.TreeNode;
 
