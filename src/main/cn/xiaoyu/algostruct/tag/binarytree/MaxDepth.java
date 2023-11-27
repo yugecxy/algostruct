@@ -1,11 +1,12 @@
-package xiaoyu.algostruct.tag.binarytree.二叉树深度;
+package xiaoyu.algostruct.tag.binarytree;
 
 import xiaoyu.algostruct.helper.TreeNode;
 
-public class Solution {
+public class MaxDepth {
     public int maxDepth(TreeNode root) {
-        if (root == null) return 0;
+        if (root == null) {
+            return 0;
+        }
         return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
-
     }
 }
