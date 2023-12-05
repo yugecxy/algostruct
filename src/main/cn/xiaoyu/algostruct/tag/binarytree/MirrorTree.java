@@ -1,21 +1,18 @@
-package xiaoyu.algostruct.tag.binarytree.二叉树的镜像;
+package xiaoyu.algostruct.tag.binarytree;
 
 import xiaoyu.algostruct.helper.TreeNode;
 
 /**
  * <a href="https://leetcode.cn/problems/er-cha-shu-de-jing-xiang-lcof/">...</a>
  */
-public class Solution {
-
+public class MirrorTree {
     public TreeNode mirrorTree(TreeNode root) {
         if (root == null) {
             return null;
         }
         TreeNode left = mirrorTree(root.left);
-        TreeNode right = mirrorTree(root.right);
-        TreeNode tmp = left;
-        root.left = right;
-        root.right = tmp;
+        root.left = mirrorTree(root.right);
+        root.right = left;
         return root;
     }
 }
