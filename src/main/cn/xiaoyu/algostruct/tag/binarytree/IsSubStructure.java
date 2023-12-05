@@ -1,25 +1,25 @@
-package xiaoyu.algostruct.tag.binarytree.树的子结构;
+package xiaoyu.algostruct.tag.binarytree;
 
 import xiaoyu.algostruct.helper.TreeNode;
 
 /**
  * <a href="https://leetcode.cn/problems/shu-de-zi-jie-gou-lcof/">...</a>
  */
-public class Solution {
+public class IsSubStructure {
     public boolean isSubStructure(TreeNode A, TreeNode B) {
-        if (B == null || A == null) {
+        if (A == null || B == null) {
             return false;
         }
-        return find(A, B) || isSubStructure(A.left, B) || isSubStructure(A.right, B);
+        return dfs(A, B) || isSubStructure(A.left, B) || isSubStructure(A.right, B);
     }
 
-    public boolean find(TreeNode A, TreeNode B) {
+    public boolean dfs(TreeNode A, TreeNode B) {
         if (B == null) {
             return true;
         }
         if (A == null) {
             return false;
         }
-        return A.val == B.val && find(A.left, B.left) && find(A.right, B.right);
+        return A.val == B.val && dfs(A.left, B.left) && dfs(A.right, B.right);
     }
 }
