@@ -1,8 +1,11 @@
-package xiaoyu.algostruct.tag.binarytree.二叉树的最小公共祖先;
+package xiaoyu.algostruct.tag.binarytree;
 
 import xiaoyu.algostruct.helper.TreeNode;
 
-public class Solution {
+/**
+ * <a href="https://leetcode.cn/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/">...</a>
+ */
+public class LowestCommonAncestor {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root == p || root == q) {
             return root;
