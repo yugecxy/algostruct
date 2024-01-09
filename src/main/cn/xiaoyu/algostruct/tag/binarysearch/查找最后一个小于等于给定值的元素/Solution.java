@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.二分.查找最后一个小于等于给定值的元素;
+package xiaoyu.algostruct.tag.binarysearch.查找最后一个小于等于给定值的元素;
 
 public class Solution {
     public int binarySearch(int[] arr, int value) {

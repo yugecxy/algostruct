@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.二分.缺失的数字;
+package xiaoyu.algostruct.tag.binarysearch.缺失的数字;
 
 /**
  * <a href="https://leetcode.cn/problems/que-shi-de-shu-zi-lcof/">...</a>

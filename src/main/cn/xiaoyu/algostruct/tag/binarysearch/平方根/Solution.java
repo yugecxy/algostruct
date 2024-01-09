@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.二分.平方根;
+package xiaoyu.algostruct.tag.binarysearch.平方根;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

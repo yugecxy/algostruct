@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.二分.搜索旋转排序数组;
+package xiaoyu.algostruct.tag.binarysearch.搜索旋转排序数组;
 
 /**
  * <a href="https://leetcode.cn/problems/search-in-rotated-sorted-array/">...</a>
