@@ -1,6 +1,9 @@
-package xiaoyu.algostruct.tag.binarysearch.查找最后一个小于等于给定值的元素;
+package xiaoyu.algostruct.tag.binarysearch;
 
-public class Solution {
+/**
+ * 查找最后一个小于等于给定值的元素
+ */
+public class FindLatest {
     public int binarySearch(int[] arr, int value) {
         int left = 0;
         int right = arr.length - 1;
@@ -33,8 +36,8 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution().binarySearch2(
-                new int[]{1}, 5
+        System.out.println(new FindLatest().binarySearch2(
+            new int[] {1}, 5
         ));
     }
 }
