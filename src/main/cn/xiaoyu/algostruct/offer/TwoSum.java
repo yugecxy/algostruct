@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.binarysearch;
+package xiaoyu.algostruct.offer;
 
 import java.util.Arrays;
 
