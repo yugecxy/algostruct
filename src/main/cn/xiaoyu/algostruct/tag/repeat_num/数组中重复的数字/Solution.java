@@ -1,4 +1,4 @@
-package xiaoyu.algostruct.tag.重复数字.数组中重复的数字;
+package xiaoyu.algostruct.tag.repeat_num.数组中重复的数字;
 
 /**
  * <a href="https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/">...</a>

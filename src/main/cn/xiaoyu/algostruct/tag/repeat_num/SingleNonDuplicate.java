@@ -1,9 +1,10 @@
-package xiaoyu.algostruct.tag.重复数字.排序数组中只出现一次的数字;
+package xiaoyu.algostruct.tag.repeat_num;
 
 /**
  * <a href="https://leetcode.cn/problems/skFtm2/">...</a>
+ * 排序数组中只出现一次的数字
  */
-public class Solution {
+public class SingleNonDuplicate {
     /**
      * 依次比较
      */
