@@ -1,9 +1,10 @@
-package xiaoyu.algostruct.tag.repeat_num.数组中出现次数超过一半的数字;
+package xiaoyu.algostruct.tag.repeat_num;
 
 /**
  * <a href="https://leetcode-cn.com/problems/shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof/">...</a>
+ * 数组中出现次数超过一半的数字（求众数）
  */
-public class Solution {
+public class MajorityElement {
     public int majorityElement(int[] nums) {
         int no = -1;
         int count = 0;
@@ -17,4 +18,5 @@ public class Solution {
         }
         return no;
     }
+
 }
