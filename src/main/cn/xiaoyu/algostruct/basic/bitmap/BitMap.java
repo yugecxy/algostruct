@@ -22,9 +22,6 @@ public class BitMap {
 
 
     public static void main(String[] args) {
-        String path = "hdfs://test-qcloud-dd-insight.net/dd-com-nio-insight-cn-test/dwh/dwd/app_user_1h_f/datetime=2023082115";
-        int slash = path.lastIndexOf("/");
-        System.out.println(path.substring(slash + 1));
         BitMap solution = new BitMap(17);
         solution.set(12);
         System.out.println(solution.get(12));
