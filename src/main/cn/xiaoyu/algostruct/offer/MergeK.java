@@ -1,14 +1,11 @@
 package xiaoyu.algostruct.offer;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 import xiaoyu.algostruct.helper.ListNode;
 
 public class MergeK {
     public ListNode merge(List<ListNode> nodes) {
-        PriorityQueue<ListNode> priorityQueue = new PriorityQueue<>(Comparator.comparingInt(a -> a.val));
+        Queue<ListNode> priorityQueue = new PriorityQueue<>(Comparator.comparingInt(a -> a.val));
         for (ListNode node : nodes) {
             priorityQueue.offer(node);
         }
