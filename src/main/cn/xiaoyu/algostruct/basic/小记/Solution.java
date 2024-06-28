@@ -44,11 +44,17 @@ public class Solution {
     /**
      * 大小写转换
      */
-    public void m() {
-
+    public String m(String str) {
+        char[] chars = str.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        for (char c : chars) {
+            char c1 = (char) (c + 32);
+            sb.append(c1);
+        }
+        return sb.toString();
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution().getSumBySplitBit(13));
+        System.out.println(new Solution().m("AASDD"));
     }
 }
