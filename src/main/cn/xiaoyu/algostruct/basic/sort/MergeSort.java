@@ -4,30 +4,37 @@ import java.util.Arrays;
 
 public class MergeSort {
     public int[] mergeSort(int[] arr) {
-        if (arr.length == 1) {
+        if (arr.length <= 1) {
             return arr;
         }
-        int pivot = arr.length / 2;
-        int[] arr1 = Arrays.copyOfRange(arr, 0, pivot);
-        int[] arr2 = Arrays.copyOfRange(arr, pivot, arr.length);
-        return merge(mergeSort(arr1), mergeSort(arr2));
+        int pivotIndex = (arr.length - 1) / 2;
+        int[] left = Arrays.copyOfRange(arr, 0, pivotIndex + 1);
+        int[] right = Arrays.copyOfRange(arr, pivotIndex + 1, arr.length);
+        return merge(mergeSort(left), mergeSort(right));
     }
 
-    public int[] merge(int[] a, int[] b) {
-        int[] ret = new int[a.length + b.length];
-        int index = 0;
+    public int[] merge(int[] arr1, int[] arr2) {
+        int[] merged = new int[arr1.length + arr2.length];
         int i = 0;
         int j = 0;
-        while (i < a.length || j < b.length) {
-            if (j >= b.length || (i < a.length && a[i] <= b[j])) {
-                ret[index] = a[i];
+        int k = 0;
+        while (i < arr1.length || j < arr2.length) {
+            if (j >= arr2.length || (i < arr1.length && arr1[i] < arr2[j])) {
+                merged[k] = arr1[i];
                 i++;
             } else {
-                ret[index] = b[j];
+                merged[k] = arr2[j];
                 j++;
             }
-            index++;
+            k++;
         }
-        return ret;
+        return merged;
+    }
+
+
+    public static void main(String[] args) {
+        int[] arr = {5, 3, 7, 2, 9, 8};
+        int[] arr1 = {5, 6, 7};
+        int[] arr2 = {8, 9};
     }
 }
