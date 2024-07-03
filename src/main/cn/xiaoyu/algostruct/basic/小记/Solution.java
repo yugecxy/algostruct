@@ -1,5 +1,8 @@
 package xiaoyu.algostruct.basic.小记;
 
+/**
+ * mark
+ */
 public class Solution {
     /**
      * 位数之和：给一个整数，求各位之和。如：123->6

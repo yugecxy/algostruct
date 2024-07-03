@@ -17,6 +17,9 @@ public class QuickSort {
         quickSort(arr, pivotIndex + 1, end);
     }
 
+    /**
+     * mark
+     */
     public int partition(int[] arr, int begin, int end) {
         int pivotV = arr[end];
         int pivotIdx = begin;
