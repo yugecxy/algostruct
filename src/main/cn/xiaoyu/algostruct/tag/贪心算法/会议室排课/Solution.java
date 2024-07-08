@@ -11,23 +11,16 @@ import java.util.PriorityQueue;
  */
 public class Solution {
     public int minMeetingRooms(List<List<Integer>> intervals) {
-        intervals.sort(Comparator.comparing(a -> a.get(0)));
+        intervals.sort(Comparator.comparingInt(a -> a.get(0)));
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         for (List<Integer> interval : intervals) {
-            int beginTime = interval.get(0);
-            int endTime = interval.get(1);
-            if (minHeap.isEmpty()) {
-                minHeap.offer(endTime);
-                continue;
-            }
-            if (beginTime >= minHeap.peek()) {
-                minHeap.poll();
-                minHeap.offer(endTime);
+            if (minHeap.isEmpty() || minHeap.peek() > interval.get(0)) {
+                minHeap.offer(interval.get(1));
             } else {
-                minHeap.offer(endTime);
+                minHeap.poll();
+                minHeap.offer(interval.get(1));
             }
         }
-
-        return intervals.size();
+        return minHeap.size();
     }
 }
