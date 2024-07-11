@@ -1,13 +1,14 @@
-package xiaoyu.algostruct.offer;
+package xiaoyu.algostruct.tag.双指针;
 
 import java.util.Arrays;
 import java.util.List;
 
 /**
  * 接雨水
+ * <a href="https://leetcode.cn/problems/container-with-most-water/description/?envType=study-plan-v2&envId=top-interview-150">...</a>
  */
 public class TrapRain {
-    //暴力/双指针
+    //双指针
     public int trapRain(List<Integer> buckets) {
         int i = 0;
         int j = buckets.size() - 1;
